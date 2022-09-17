@@ -1,13 +1,13 @@
 body {
-    background-color: #445a6f;
-    color: white;
-    font-family: monospace;
+    background-color: #272822;
+    color: #f8f8f2;
+    font-family: Consolas, monaco, monospace;
     font-size: 16px;
 }
 
 .navbar {
     background-color: white;
-    color: black;
+    color: #272822;
     text-align: left;
 }
 
