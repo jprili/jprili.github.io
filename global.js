@@ -18,15 +18,12 @@ function initHome() {
         12 : generateInstruction("contact"),
         14 : "or click an item on the navigation bar below."
     };
+    const emptyline = "<p class='tildeMarker'> ~ </p>";
+    const firstTilde = "<p> <span class='tildeMarker'> ~ </span>";
 
-    let cursor = document.createElement("p");
-    cursor.setAttribute("id", "cursor");
-    cursor.appendChild(document.createTextNode("\xa0"));
-    mainbody.appendChild(cursor);
+    mainbody.innerHTML += "<p> <span id='cursor'> &nbsp; </span> </p>";
 
     for (var i = 0; i < 27; i++) {
-        let emptyline = "<p class='tildeMarker'> ~ </p>";
-        let firstTilde = "<p> <span class='tildeMarker'> ~ </span>";
 
         for (const [key, val] of Object.entries(homebodyIndices)) {
             if (i == key) {
