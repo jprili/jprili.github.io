@@ -19,6 +19,8 @@ function initHome() {
         14 : "or click an item on the navigation bar below."
     };
 
+
+
     for (var i = 0; i < 30; i++) {
         let emptyline = "<p class='tildeMarker'> ~ </p>";
         let firstTilde = "<p> <span class='tildeMarker'> ~ </span>";

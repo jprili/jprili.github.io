@@ -42,7 +42,7 @@ a:active {text-decoration: none;}
 }
 
 .tildeMarker {
-    color: #ac9cf2;
+    color: #ffd766;
 }
 
 .spacer  {
@@ -61,6 +61,10 @@ a:active {text-decoration: none;}
 
 .navbar .item:hover{
     background-color: #fc9867;
+}
+
+p {
+    min-width: max-content;
 }
 
 footer {
