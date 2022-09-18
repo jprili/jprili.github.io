@@ -5,9 +5,15 @@ body {
     font-size: 16px;
 }
 
+h1 {
+    font-size: 16px;
+    color: #ff6188
+}
+
 .navbar {
     position: fixed;
-    bottom: 10px;
+    bottom: 30px;
+    width: 100%;
 
     background-color: white;
     color: #272822;
