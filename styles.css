@@ -1,9 +1,9 @@
 body {
-    background-color: #272822;
-    color: #f8f8f2;
+    background-color: #302c2c;
+    color: #fdf9f3;
     font-family: Consolas, monaco, monospace;
     font-size: 16px;
-    line-height: 100%;
+    line-height: 0.5;
 }
 
 h1 {
@@ -20,7 +20,7 @@ h1 {
     bottom: 32px;
     width: 100%;
 
-    background-color: #f8f8f2;
+    background-color: #fdf9f3;
     color: #272822;
     text-align: left;
     line-height: 1.5;
@@ -47,7 +47,7 @@ a:active {text-decoration: none;}
 }
 
 .spacer  {
-    background-color:#272822;
+    background-color: #302c2c;
     width:100%;
 
     position: fixed;
@@ -56,6 +56,17 @@ a:active {text-decoration: none;}
 }
 
 .navbar .item {
-    margin-left: 10px;
-    margin-right: 10px;
+    padding: 2px;
+    color: #302c2c;
+}
+
+.navbar .item:hover{
+    background-color: #fc9867;
+}
+
+footer {
+    text-align: center;
+    color: #fdf9f3;
+    font-size: 12px;
+    padding: 12px;
 }
