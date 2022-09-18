@@ -3,7 +3,7 @@ body {
     color: #f8f8f2;
     font-family: Consolas, monaco, monospace;
     font-size: 16px;
-    line-height: 0.6;
+    line-height: 100%;
 }
 
 h1 {
@@ -17,10 +17,10 @@ h1 {
 
 .navbar {
     position: fixed;
-    bottom: 30px;
+    bottom: 32px;
     width: 100%;
 
-    background-color: white;
+    background-color: #f8f8f2;
     color: #272822;
     text-align: left;
     line-height: 1.5;
@@ -36,11 +36,11 @@ a:active {text-decoration: none;}
 }
 
 #hometext {
-    text-align: left;
+    justify-content: left;
 
-    padding-top: 40pt;
-    padding-left: 70pt;
-    padding-right: 70pt;
+    padding-top: 64px;
+    padding-left: 64px;
+    padding-right: 64px;
     padding-bottom: 10%;
 
     min-width: max-content;
@@ -48,6 +48,11 @@ a:active {text-decoration: none;}
 
 .spacer  {
     background-color:#272822;
+    width:100%;
+
+    position: fixed;
+    bottom: 0;
+    min-height: 32px;
 }
 
 .navbar .item {
