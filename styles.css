@@ -60,7 +60,7 @@ a:active {text-decoration: none;}
 }
 
 .navbar .item:hover{
-    background-color: #fc9867;
+    background-color: #d9d5d0;
 }
 
 p {
@@ -72,4 +72,11 @@ footer {
     color: #fdf9f3;
     font-size: 12px;
     padding: 12px;
+}
+
+#cursor {
+    font-size: 16px;
+    min-height: 24px;
+    max-width: 12px;
+    background-color: #4a4444;
 }

@@ -19,9 +19,12 @@ function initHome() {
         14 : "or click an item on the navigation bar below."
     };
 
+    let cursor = document.createElement("p");
+    cursor.setAttribute("id", "cursor");
+    cursor.appendChild(document.createTextNode("\xa0"));
+    mainbody.appendChild(cursor);
 
-
-    for (var i = 0; i < 30; i++) {
+    for (var i = 0; i < 27; i++) {
         let emptyline = "<p class='tildeMarker'> ~ </p>";
         let firstTilde = "<p> <span class='tildeMarker'> ~ </span>";
 
@@ -62,7 +65,7 @@ function initProjects() {
 }
 
 function initContact() {
-    var mainbody = document.getElementById("contactbody");
+    let mainbody = document.getElementById("contactbody");
 
     for (var i = 0; i < 30; i++) {
         let emptyline = "<p class='tildeMarker'> ~ </p>";
