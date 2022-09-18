@@ -11,7 +11,7 @@ h1 {
     margin-left: 0;
 }
 
-#maintitle {
+#james {
     color: #ff6188;
 }
 
@@ -37,7 +37,17 @@ a:active {text-decoration: none;}
 
 #hometext {
     text-align: left;
-    margin: 60pt;
+
+    padding-top: 40pt;
+    padding-left: 70pt;
+    padding-right: 70pt;
+    padding-bottom: 10%;
+
+    min-width: max-content;
+}
+
+.spacer  {
+    background-color:#272822;
 }
 
 .navbar .item {
