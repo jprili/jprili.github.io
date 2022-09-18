@@ -6,6 +6,9 @@ body {
 }
 
 .navbar {
+    position: fixed;
+    bottom: 10px;
+
     background-color: white;
     color: #272822;
     text-align: left;
