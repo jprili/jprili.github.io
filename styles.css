@@ -35,15 +35,14 @@ a:active {text-decoration: none;}
     color: #78dce8
 }
 
-#hometext {
+#mainbody {
     justify-content: left;
 
-    padding-top: 64px;
-    padding-left: 64px;
-    padding-right: 64px;
-    padding-bottom: 10%;
-
     min-width: max-content;
+}
+
+.tildeMarker {
+    color: #ac9cf2;
 }
 
 .spacer  {
