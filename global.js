@@ -1,85 +1,53 @@
 // Page initialisation. Adds tildes on the left of the screen.
-function init() {
-    if (document.getElementById("homebody")) {
-        initHome();
-    } else if (document.getElementById("projectsbody")) {
-        initProjects();
-    } else {
-        initContact();
-    }
+const init = () => {
+    initIntroPage()
 }
 
-function initHome() {
-    var mainbody = document.getElementById("homebody");
-    const homebodyIndices = {
-        8 : generateWelcome(),
-        10 : generateInstruction("home"),
-        11 : generateInstruction("projects"),
-        12 : generateInstruction("contact"),
-        14 : "or click an item on the navigation bar below."
-    };
-    const emptyline = "<p class='tildeMarker'> ~ </p>";
-    const firstTilde = "<p> <span class='tildeMarker'> ~ </span>";
+// intro page initialisation
+const initIntroPage = () => {
+    let tildeColumn = document.getElementById("tildeColumn")
 
-    mainbody.innerHTML += "<p> <span id='cursor'> &nbsp; </span> </p>";
+    let introOverlay = document.getElementById("introOverlay")
 
-    for (var i = 0; i < 27; i++) {
+    tildeColumn.innerHTML += "<p id=\"cursor\"> &nbsp; </p>";
 
-        for (const [key, val] of Object.entries(homebodyIndices)) {
-            if (i == key) {
-                mainbody.innerHTML += firstTilde.concat(val, "</p>")
-                i++
-            }
+    let messageMap = new Map([
+    [5, "<p class=\"contentMarker\"> welcome to <span id=\"james\">james paolo rili</span>'s personal website!</p>"],
+    [7, generateInstruction("home")],
+    [8, generateInstruction("projects")],
+    [9, generateInstruction("contacts")],
+    [11, "<p class =\"contentMarker\"> or click an item in the navigation bar below.</p>"]]
+    );
+
+    for (let i = 0; i < 29; i++) {
+        tildeColumn.innerHTML += "<p class=\"tildeMarker\"> ~ </p>";
+
+        if (messageMap.has(i)) {
+            introOverlay.innerHTML += messageMap.get(i);
+        } else {
+            introOverlay.innerHTML += "<p class=\"contentMarker\"> &nbsp; </p>";
         }
-
-        mainbody.innerHTML += emptyline;
-    }
-
-    function generateWelcome() {
-        let james = " <span id='james'>james paolo rili</span>";
-        let welcome_start = "welcome to";
-        let welcome_end = "'s personal website!";
-
-        return welcome_start.concat(james, welcome_end);
-    }
-
-    function generateInstruction(name) {
-        let entertext = "<span class='bluetext'>&lt;Enter&gt;</span>";
-        
-        return "type ".concat(":", name, entertext, " to display ", name, " page.");
     }
 }
 
-function initProjects() {
-    var mainbody = document.getElementById("projectsbody");
-
-    for (var i = 0; i < 30; i++) {
-        let emptyline = "<p class='tildeMarker'> ~ </p>";
-        let firstTilde = "<p> <span class='tildeMarker'> ~ </span>";
-
-        mainbody.innerHTML += emptyline;
-    }
+const generateInstruction = (name) => {
+    let enter = "<span class=\"blueText\">\&lt;Enter\&gt;</span>";
+    return `<p class=\"contentMarker\"> type :${name}${enter} ${normaliseSpace(name, 15)} to go to the ${name} page.</p>`;
 }
 
-function initContact() {
-    let mainbody = document.getElementById("contactbody");
+// align the spaces for the commands.   
+const normaliseSpace = (inputString, numSpaces) => {
+    let nbspNumber = numSpaces - inputString.length;
+    console.log(nbspNumber)
 
-    for (var i = 0; i < 30; i++) {
-        let emptyline = "<p class='tildeMarker'> ~ </p>";
-        let firstTilde = "<p> <span class='tildeMarker'> ~ </span>";
+    let initString = "";
 
-        mainbody.innerHTML += emptyline;
-    }
-}
-
-function appendNbSp(num) {
-    let spaces = "";
-
-    for (var i = 0; i < num; i++) {
-         spaces.concat("&nbsp;");
+    for (let i = 0; i < nbspNumber; i++) {
+        initString = initString.concat("&nbsp");
+        console.log(`start ${initString} end`)
     }
 
-    return spaces;
+    return initString;
 }
 
 window.onload = init;
