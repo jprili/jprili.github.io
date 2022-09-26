@@ -31,7 +31,7 @@ const initProjectsPage = async () => {
         // key (int)
         // val (Object)
         let name = val["name"];
-        let url = val["html_url"];
+        let url = val["url"];
         let desc = guardNull(val["desc"]); // string or null
 
         addListItem(name, url, desc);
