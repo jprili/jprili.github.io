@@ -6,20 +6,19 @@ const init = () => {
 // intro page initialisation
 const initIntroPage = () => {
     let tildeColumn = document.getElementById("tildeColumn")
-
     let introOverlay = document.getElementById("introOverlay")
+    let messageMap = new Map([
+    [07, "<p class=\"contentMarker\"> welcome to <span id=\"james\"> \
+    james paolo rili</span>'s personal website!</p>"],
+    [09, generateInstruction("home")],
+    [10, generateInstruction("projects")],
+    [11, generateInstruction("contacts")],
+    [13, "<p class =\"contentMarker\"> or click an item in the navigation bar below.</p>"]]
+    );
 
     tildeColumn.innerHTML += "<p id=\"cursor\"> &nbsp; </p>";
 
-    let messageMap = new Map([
-    [5, "<p class=\"contentMarker\"> welcome to <span id=\"james\">james paolo rili</span>'s personal website!</p>"],
-    [7, generateInstruction("home")],
-    [8, generateInstruction("projects")],
-    [9, generateInstruction("contacts")],
-    [11, "<p class =\"contentMarker\"> or click an item in the navigation bar below.</p>"]]
-    );
-
-    for (let i = 0; i < 29; i++) {
+    for (let i = 0; i < 30; i++) {
         tildeColumn.innerHTML += "<p class=\"tildeMarker\"> ~ </p>";
 
         if (messageMap.has(i)) {
@@ -38,13 +37,11 @@ const generateInstruction = (name) => {
 // align the spaces for the commands.   
 const normaliseSpace = (inputString, numSpaces) => {
     let nbspNumber = numSpaces - inputString.length;
-    console.log(nbspNumber)
 
     let initString = "";
 
     for (let i = 0; i < nbspNumber; i++) {
         initString = initString.concat("&nbsp");
-        console.log(`start ${initString} end`)
     }
 
     return initString;
