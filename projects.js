@@ -12,8 +12,6 @@ const generateAPIMap = async () => {
     data.forEach((element, index) => dataMap.set(index,
      extractObjElements(element)));
 
-    console.log(dataMap);
-
     return dataMap;
 }
 
@@ -22,8 +20,6 @@ const initProjectsPage = async () => {
     let projectsHead = document.getElementById("projectsHead");
 
     let repos = await generateAPIMap();
-
-    console.log(repos);
 
     projectsHead.innerHTML += "<h1>hi :3</h1>"
 
