@@ -60,7 +60,7 @@ const guardNull = (inputString) => {
     if (inputString) {
         return inputString;
     } else {
-        return "No description.";
+        return "No description yet.";
     }
 }
 
