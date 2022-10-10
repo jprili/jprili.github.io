@@ -43,9 +43,14 @@ const initProjectsPage = async () => {
 }
 
 const addListItem = (name, url, desc) => {
+    let filterNames = ["jprili", "jprili.github.io"];
     let projectsList = document.getElementById("projectsList");
 
-    projectsList.innerHTML += `<p class="listItem"><a href= \"${url}\">${name}</a>: ${desc} </p>`
+    if (!filterNames.includes(name)) {
+
+        projectsList.innerHTML += `<p class="listItem">
+        <a href= \"${url}\">${name}</a>: ${desc} </p>`
+    }
 }
 
 // takes an object and returns needed values
