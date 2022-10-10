@@ -24,6 +24,7 @@ h2 {
 
 .navbar {
     position: fixed;
+    display: block;
     bottom: 32px;
     width: 100%;
 
@@ -31,6 +32,15 @@ h2 {
     color: #272822;
     text-align: left;
     line-height: 1.7;
+}
+
+.navbar .item {
+    padding: 2px;
+    color: #302c2c;
+}
+
+.navbar .item:hover{
+    background-color: #d9d5d0;
 }
 
 a:link {text-decoration: none;}
@@ -45,11 +55,6 @@ a:active {text-decoration: none;}
 .listItem {
     max-width: 100%;
     line-height: 1.6;
-}
-
-#mainbody {
-    justify-content: left;
-    min-width: max-content;
 }
 
 .tildeMarker {
@@ -73,16 +78,8 @@ a:active {text-decoration: none;}
     z-index: 2;
 }
 
-.navbar .item {
-    padding: 2px;
-    color: #302c2c;
-}
-
-.navbar .item:hover{
-    background-color: #d9d5d0;
-}
-
 footer {
+    display: block;
     text-align: center;
     color: #fdf9f3;
     width: 100%;
