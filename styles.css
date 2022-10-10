@@ -4,12 +4,16 @@ body {
     font-family: Consolas, monaco, monospace;
     font-size: 16px;
     line-height: 0.5;
-    grid-template-columns: 90px 90px;
-    grid-template-rows: 90px 90px;
     display: grid;
+    grid-template-columns: 30px 2fr;
 }
 
 h1 {
+    font-size: 16px;
+    margin-left: 0;
+}
+
+h2 {
     font-size: 16px;
     margin-left: 0;
 }
@@ -38,6 +42,11 @@ a:active {text-decoration: none;}
     color: #78dce8
 }
 
+.listItem {
+    max-width: 100%;
+    line-height: 1.6;
+}
+
 #mainbody {
     justify-content: left;
 
@@ -51,9 +60,8 @@ a:active {text-decoration: none;}
 }
 
 .contentMarker{
-    max-width: 10px;
     height: 16px;
-
+    min-width: max-content;
 }
 
 .spacer  {
@@ -73,10 +81,6 @@ a:active {text-decoration: none;}
 
 .navbar .item:hover{
     background-color: #d9d5d0;
-}
-
-p {
-    min-width: max-content;
 }
 
 footer {
@@ -102,6 +106,9 @@ footer {
     margin-top: -6pt;
 }
 
+
 a {
     color: #78dce8;
+    width: 50%;
 }
+
