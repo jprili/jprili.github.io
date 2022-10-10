@@ -6,7 +6,7 @@ const init = () => {
 // intro page initialisation
 const initIntroPage = () => {
     let tildeColumn = document.getElementById("tildeColumn")
-    let introOverlay = document.getElementById("introOverlay")
+    let intro = document.getElementById("intro")
     let messageMap = new Map([
     [07, "<p class=\"contentMarker\"> welcome to <span id=\"james\"> \
     james paolo rili</span>'s personal website!</p>"],
@@ -22,9 +22,9 @@ const initIntroPage = () => {
         tildeColumn.innerHTML += "<p class=\"tildeMarker\"> ~ </p>";
 
         if (messageMap.has(i)) {
-            introOverlay.innerHTML += messageMap.get(i);
+            intro.innerHTML += messageMap.get(i);
         } else {
-            introOverlay.innerHTML += "<p class=\"contentMarker\"> &nbsp; </p>";
+            intro.innerHTML += "<p class=\"emptyContentMarker\"> &nbsp; </p>";
         }
     }
 }
