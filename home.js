@@ -18,7 +18,7 @@ const initIntroPage = () => {
 
     tildeColumn.innerHTML += "<p id=\"cursor\"> &nbsp; </p>";
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 40; i++) {
         tildeColumn.innerHTML += "<p class=\"tildeMarker\"> ~ </p>";
 
         if (messageMap.has(i)) {
