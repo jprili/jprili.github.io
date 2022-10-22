@@ -25,11 +25,6 @@ class Cursor {
         this.col = col + deltaC;
     }
 
-    update() {
-        // Insert update function
-        /* inline comment for no reason */
-    }
-
     genMoveKeys() {
         moveKeys = new Map();
         moveKeys.set(["ArrowUp", "k"], this.move(-1, 0));
