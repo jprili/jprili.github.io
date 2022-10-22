@@ -17,11 +17,12 @@ const generateAPIMap = async () => {
 
 const initProjectsPage = async () => {
 
-    let projectsHead = document.getElementById("projectsHead");
+    let projList = document.getElementById("projectsList");
 
     let repos = await generateAPIMap();
 
-    projectsHead.innerHTML += "<h1>hi :3</h1>"
+    projList.innerHTML += "<h1> <span id=\"james\">james'</span> projects:</h1>"
+    projList.innerHTML += "<br/>"
 
     for ([key, val] of repos) {
         // key (int)
@@ -42,9 +43,14 @@ const initProjectsPage = async () => {
 }
 
 const addListItem = (name, url, desc) => {
+    let filterNames = ["jprili", "jprili.github.io"];
     let projectsList = document.getElementById("projectsList");
 
-    projectsList.innerHTML += `<p><a href= \"${url}\">${name}</a>: ${desc} </p> <br/>`
+    if (!filterNames.includes(name)) {
+
+        projectsList.innerHTML += `<p class="listItem">
+        <a href= \"${url}\">${name}</a>: ${desc} </p>`
+    }
 }
 
 // takes an object and returns needed values
