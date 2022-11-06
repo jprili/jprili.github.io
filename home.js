@@ -5,28 +5,26 @@ const init = () => {
 
 // intro page initialisation
 const initIntroPage = () => {
-    let tildeColumn = document.getElementById("tildeColumn")
     let intro = document.getElementById("intro")
-    let messageMap = new Map([
-    [07, "<p class=\"contentMarker\"> welcome to <span id=\"james\"> \
-    james paolo rili</span>'s personal website!</p>"],
-    [09, generateInstruction("home")],
-    [10, generateInstruction("projects")],
-    [11, generateInstruction("contacts")],
-    [13, "<p class =\"contentMarker\"> or click an item in the navigation bar below.</p>"]]
-    );
 
-    tildeColumn.innerHTML += "<p id=\"cursor\"> &nbsp; </p>";
+    let messages = ["<p class=\"contentMarker\"> welcome to <span id=\"james\"> \
+    james paolo rili</span>'s personal website!</p>",
+    generateInstruction("home"),
+    generateInstruction("projects"),
+    generateInstruction("contacts"),
+    "<p class =\"contentMarker\"> or click an item in the navigation bar below.</p>"];
 
-    for (let i = 0; i < 40; i++) {
-        tildeColumn.innerHTML += "<p class=\"tildeMarker\"> ~ </p>";
-
-        if (messageMap.has(i)) {
-            intro.innerHTML += messageMap.get(i);
-        } else {
-            intro.innerHTML += "<p class=\"emptyContentMarker\"> &nbsp; </p>";
-        }
+    for (let i = 0; i < messages.length; i++) {
+        intro.innerHTML += messages[i];
     }
+
+    let textBox = document.getElementById("command");
+
+    textBox.addEventListener("keydown", function(event) {
+        if (event.key === ":" && textBox.style.visibility === "hidden") {
+            textBox.style.visibility = "visible";
+        }
+    });
 }
 
 const generateInstruction = (name) => {
@@ -46,5 +44,6 @@ const normaliseSpace = (inputString, numSpaces) => {
 
     return initString;
 }
+
 
 window.onload = init;

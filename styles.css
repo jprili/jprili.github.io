@@ -110,7 +110,11 @@ a:active {text-decoration: none;}
     z-index: 0;
 }
 
-#tildeColumn {
-    z-index: 0;
+
+#command {
+    z-index: 2;
+    position: fixed;
+    bottom: 64px;
+    visibility: hidden;
 }
 
