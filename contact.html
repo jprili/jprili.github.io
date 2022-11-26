@@ -6,13 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <title>James Paolo Rili | Contact</title>
-
-    <!--Global JavaScript file-->
-    <script type="text/javascript" src="global.js"></script>
   </head>
 
   <body>
-    <div id="contactbody">
+    <div>
+    </div>
+    <div id="contactBody">
+      <h1> Find <span id="james">me</span> on:</h1>
+      <br/>
+      <a class="contactLink" href="https://github.com/jprili">GitHub</a> |
+      <a class="contactLink" href="https://linkedin.com/in/jamespr">LinkedIn</a> |
+      <a id="emailLink" class="contactLink" href="">Email</a>
+
+      <script>
+        // anti email-scraping!!
+        let handle = "rilijames";
+        let host = "gmail.com";
+  
+        const emailLink = document.getElementById("emailLink");
+  
+        emailLink.setAttribute("href", `mailto:${handle}@${host}`);
+      </script>
 
     </div>
 
