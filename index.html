@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatijble" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>James Paolo Rili | home</title>
 
-    <!--Global JavaScript file-->
-    <script type="text/javascript" src="home.js"></script>
+<html>
+  <head>
+    <title>James Paolo Rili -- PseudoVim</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
 
   <body>
-    <div id="tildeColumn">
-    </div>
+    <header>
+      <div id="statBar">
+        <div id="statBar::mode">[NORMAL]</div>
+        <div id="statBar::stat">index [+] (%d%)</div>
+      </div>
+    </header>
 
-    <div id="intro"></div> 
+    <main>
+      <div id="text">
+        Hi!
+      </div>
 
-    <form>
-      <input id="command" type="text">
-    </form>
-    <nav class="navbar">
-      <a class="item" href="index.html">home</a>
-      <a class="item" href="projects.html">projects</a>
-      <a class="item" href="contact.html">contact</a>
-    </nav>
+      <ul id="navBar">
+        <li><a href="#">link 1</a></li>
+        <li><a href="#">link 2</a></li>
+        <li><a href="#">link 3</a></li>
+      </ul>
+    </main>
 
-    <div class="spacer"><footer>James Paolo Rili &copy; 2022</footer></div>
+    <footer>
+      By James, with some help from GPT-3
+    </footer>
   </body>
 </html>
