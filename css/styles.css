@@ -10,11 +10,6 @@ body {
     color: #f5e9cf;
 }
 
-header {
-    height: 18pt;
-    background-color: #e96479;
-}
-
 #statBar {
     display: flex;
     justify-content: space-between;
@@ -24,52 +19,101 @@ header {
 }
 
 #statBar-mode {
-    font-weight: bold;
-  }
+  font-weight: bold;
+}
   
-  #statBar-fileInfo {
-    text-align: right;
-  }
+#statBar-fileInfo {
+  text-align: right;
+}
   
-  /* main styles */
-  main {
-    padding: 6pt;
-    margin: 12pt;
-    background-color: #64587b;
-  }
-  
-  #text {
-    font-size: 16pt;
-    padding: 12pt;
-    background-color: #4d455d;
-    color: #f5e9cf;
-  }
-  
-  #navBar {
-    list-style: none;
-    display: flex;
-    justify-content: left;
-    margin: 12pt 0;
-  }
-  
-  #navBar li {
-    margin-right: 12pt;
-  }
-  
-  #navBar a {
-    color: #eee8d5;
-    text-decoration: none;
-  }
-  
-  #navBar a:hover {
-    text-decoration: underline;
-  }
-  
-  /* footer styles */
-  footer {
-    background-color: #64587b;
-    color: #f5e9cf;
-    padding: 6pt;
-    text-align: right;
-  }
+/* main styles */
+main {
+  padding: 6pt;
+  margin: 12pt;
+}
+
+.command {
+  color: #7db9b6;
+}
+
+#text {
+  font-size: 16pt;
+  padding: 12pt;
+  background-color: #4d455d;
+  color: #f5e9cf;
+}
+
+#navBar {
+  list-style: none;
+  display: flex;
+  justify-content: left;
+  margin: 12pt 0;
+}
+
+#navBar li {
+  margin-right: 12pt;
+}
+
+#navBar a {
+  color: #eee8d5;
+  text-decoration: none;
+}
+
+#navBar a:hover {
+  text-decoration: underline;
+}
+
+/* head + foot styles */
+header {
+  position: fixed;
+  bottom: 48pt;
+  left: 0;
+  right: 0;
+  height: 18pt;
+  background-color: #e96479;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #64587b;
+  color: #f5e9cf;
+  padding: 6pt;
+  text-align: right;
+}
+
+/* input styles*/
+#commandForm {
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 28pt;
+}
+
+#commandForm input {
+  caret-color: transparent;
+}
+
+#commandForm span {
+  color: #9b59b6;
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+#commandInput {
+  background-color: #4d455d;
+  border: none;
+  color: #f5e9cf;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16pt;
+  height: 24px;
+  padding: 2px 6px;
+}
+
+#commandInput:focus{
+  outline: none;
+}
   
