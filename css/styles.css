@@ -29,7 +29,15 @@ body {
 /* main styles */
 main {
   padding: 6pt;
-  margin: 12pt;
+  margin-left: 32pt;
+  margin-right: 32pt;
+  margin-top: 128pt;
+  margin-bottom:64pt;
+}
+
+.commandGroup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .command {
@@ -90,11 +98,13 @@ footer {
   position: fixed;
   left: 0;
   right: 0;
+  width: 100%;
   bottom: 28pt;
 }
 
 #commandForm input {
   caret-color: transparent;
+  width: 100%;
 }
 
 #commandForm span {
