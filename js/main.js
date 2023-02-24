@@ -24,13 +24,13 @@ $(document).ready(function () {
         var command = $('#commandInput').val();
     
         switch (command) {
-            case 'index':
+            case ':index':
                 console.log('index!');
                 break;
-            case 'projects':
+            case ':projects':
                 //
                 break;
-            case 'contacts':
+            case ':contacts':
                 //
                 break;
             default:
