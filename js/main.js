@@ -1,23 +1,44 @@
-$('#commandForm').on('submit', function(e) {
-    e.preventDefault();
 
-    var command = $('#commandInput').val();
+/**
+ * Handle input behaviour
+ */
+$(document).ready(function () {
+    $('#commandDiv').hide();                   // hide by default
 
-    switch (command) {
-        case 'index':
-            //
-            break;
-        case 'projects':
-            //
-            break;
-        case 'contacts':
-            //
-            break;
-        default:
-            //
-            break;
-    }
+    $(document).on('keydown', function(e) {
+        if (e.key === ':') {
+            $('#commandDiv').show();
+            $('#commandInput').focus();
+        }
+    });
 
-    $('#commandInput').val('');
+    $('#commandInput').on('input', function() {
+        if ($(this).val() == '') {
+            $('#commandDiv').hide();
+        }
+    });
 
+    $('#commandForm').on('submit', function(e) {
+        e.preventDefault();
+    
+        var command = $('#commandInput').val();
+    
+        switch (command) {
+            case 'index':
+                console.log('index!');
+                break;
+            case 'projects':
+                //
+                break;
+            case 'contacts':
+                //
+                break;
+            default:
+                //
+                break;
+        }
+    
+        $('#commandInput').val('');
+    
+    });
 });
