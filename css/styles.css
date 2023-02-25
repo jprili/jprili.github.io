@@ -44,6 +44,16 @@ main {
   color: #7db9b6;
 }
 
+.command a:link {
+  color: #7db9b6;
+  text-decoration: none;
+}
+
+.command a:visited {
+  color: #7db9b6;
+  text-decoration: none;
+}
+
 #text {
   font-size: 16pt;
   padding: 12pt;
