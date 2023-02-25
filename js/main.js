@@ -18,6 +18,10 @@ $(document).ready(function () {
         }
     });
 
+    $(window).on('hashchange', function() {
+
+    });
+
     $('#commandForm').on('submit', function(e) {
         e.preventDefault();
     
