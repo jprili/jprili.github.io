@@ -2,24 +2,11 @@ const init = () => {
     initProjectsPage();
 }
 
-const generateAPIMap = async () => {
-    const source = "https://api.github.com/users/jprili/repos";
-    // converting JSON to Map
-
-    let data = await getAPIData(source);
-    let dataMap = new Map();
-
-    data.forEach((element, index) => dataMap.set(index,
-     extractObjElements(element)));
-
-    return dataMap;
-}
-
 const initProjectsPage = async () => {
 
     let projList = document.getElementById("projectsList");
 
-    let repos = await generateAPIMap();
+    let repos = await generateAPIMap();  // generates a map object of the API
 
     projList.innerHTML += "<h1> <span id=\"james\">james'</span> projects:</h1>"
     projList.innerHTML += "<br/>"
@@ -35,13 +22,49 @@ const initProjectsPage = async () => {
     }
 
 }
-    
+
+/**
+ * Generates a Map Object from the data obtained.
+ * 
+ * @returns {Map} map of the data obtained
+ */
+const generateAPIMap = async () => {
+    const source = "https://api.github.com/users/jprili/repos";
+    // converting JSON to Map
+
+    let data    = getAPIData(source);
+    let dataMap = new Map();
+
+    data.forEach(
+        (element, index) => 
+        dataMap.set(index, extractObjElements(element))
+    );
+
+    return dataMap;
+}
+
+/**
+ * Retrieves API from source url
+ * 
+ * @param   {string} source source of the data
+ * 
+ * @returns {JSON}          API information
+ */
  const getAPIData = async (source) => {
     let api = await fetch(source)
-    .then(response => response.json());  
+                    .then(response => response.json());  
     return api;
 }
 
+/**
+ * Adds an item to the frontend
+ * 
+ * @param {string} name name of the item
+ * @param {string} url  link to the item
+ * @param {string} desc item description
+ * 
+ * @returns none
+ */
 const addListItem = (name, url, desc) => {
     let filterNames = ["jprili", "jprili.github.io"];
     let projectsList = document.getElementById("projectsList");
@@ -53,7 +76,8 @@ const addListItem = (name, url, desc) => {
     }
 }
 
-// takes an object and returns needed values
+// Helpers
+
 const extractObjElements = (objInElement) => {    
     let objVal = {name: objInElement['name'],
     url: objInElement['html_url'],
