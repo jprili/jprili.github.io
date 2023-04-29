@@ -1,14 +1,10 @@
-const init = () => {
-    initProjectsPage();
-}
+export const initProjectsPage = async () => {
+    let projList = document.getElementById("main");
 
-const initProjectsPage = async () => {
+    let repos = generateAPIMap();  // generates a map object of the API
 
-    let projList = document.getElementById("projectsList");
-
-    let repos = await generateAPIMap();  // generates a map object of the API
-
-    projList.innerHTML += "<h1> <span id=\"james\">james'</span> projects:</h1>"
+    projList.innerHTML = ""
+    projList.innerHTML += "<p> <span id=\"james\">james'</span> projects:</p>"
     projList.innerHTML += "<br/>"
 
     for ([key, val] of repos) {
@@ -93,6 +89,3 @@ const guardNull = (inputString) => {
         return "No description yet.";
     }
 }
-
-
-window.onload = init;

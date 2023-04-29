@@ -1,3 +1,4 @@
+import {initProjectsPage as initProjects} from "./projects.js";
 
 /**
  * Handle input behaviour
@@ -54,7 +55,7 @@ $(document).ready(function () {
                 //
                 break;
             case ':projects':
-                //
+                initProjects();
                 break;
             case ':contacts':
                 //
