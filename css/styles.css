@@ -136,4 +136,8 @@ footer {
 #commandInput:focus{
   outline: none;
 }
+
+.commandMode {
+  background-color: #7db9b6;
+}
   
