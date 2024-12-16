@@ -41,6 +41,7 @@ const loadWork = async () => {
             .getElementById("general-card-template")
             .content.cloneNode(true);
 
+        // Add work date
         card.querySelector(".title").textContent = work.title;
         const dateStart = new Date(work.from);
         const dateEnd = work.to ? new Date(work.to) : new Date();
@@ -48,6 +49,10 @@ const loadWork = async () => {
             dateStart,
             dateEnd
         )})`;
+
+        // Add institution and location
+        card.querySelector(".institution").textContent = work.institution;
+        card.querySelector(".location").textContent = work.location;
 
         workExperience.appendChild(card);
     }
