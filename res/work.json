@@ -39,6 +39,7 @@
         {
             "title": "Cashier, Production",
             "institution": "Pizza Hut LP",
+            "location": "Richmond, BC",
             "from": "2017-09",
             "to": "2018-10",
             "description": [""],
@@ -47,6 +48,7 @@
         {
             "title": "Maintenance Technician",
             "institution": "RCB Cleaning Services Inc.",
+            "location":"Vancouver, BC",
             "from": "2021-07",
             "to": "2021-07",
             "description": [""],
