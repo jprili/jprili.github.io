@@ -14,17 +14,17 @@ const getDurationString = (start, end) => {
     } else if (yearDiff == 1) {
         toReturn = `1 y`;
     } else {
-        toReturn = `${yearDiff} y`
+        toReturn = `${yearDiff} y`;
     }
 
     if (yearDiff && monthDiff) {
-        toReturn += ", "
+        toReturn += ", ";
     }
 
     if (monthDiff == 1) {
-        toReturn += "1 mo"
+        toReturn += "1 mo";
     } else if (monthDiff > 1) {
-        toReturn += `${monthDiff} mo`
+        toReturn += `${monthDiff} mo`;
     }
 
     return toReturn;
@@ -45,10 +45,9 @@ const loadWork = async () => {
         card.querySelector(".title").textContent = work.title;
         const dateStart = new Date(work.from);
         const dateEnd = work.to ? new Date(work.to) : new Date();
-        card.querySelector(".date").textContent = `${work.from} \u2012 ${work.to} (${getDurationString(
-            dateStart,
-            dateEnd
-        )})`;
+        card.querySelector(".date").textContent = `${work.from} \u2012 ${
+            work.to
+        } (${getDurationString(dateStart, dateEnd)})`;
 
         // Add institution and location
         card.querySelector(".institution").textContent = work.institution;
@@ -56,11 +55,10 @@ const loadWork = async () => {
 
         // Add description
         let descriptions = document.createElement("ul");
-        descriptions.className = "list-disc"
+        descriptions.className = "list-disc";
         for (let description of work.descriptions) {
             let point = document.createElement("li");
             point.textContent = description;
-
 
             descriptions.appendChild(point);
         }
@@ -70,8 +68,11 @@ const loadWork = async () => {
     }
 };
 
+const loadSkills = async () => {};
+
 const setup = () => {
     loadWork();
+    loadSkills();
 };
 
 setup();
