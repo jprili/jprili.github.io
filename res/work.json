@@ -6,7 +6,7 @@
             "location": "Richmond, BC",
             "from": "2022-09",
             "to": "2023-04",
-            "description": [
+            "descriptions": [
                 "Developed and optimised Python-based software for technical validation of hotspot devices, reducing validation time by 50%.",
                 "Spearheaded the implementation of coding standards and lead a comprehensive refactoring initiative, enhancing software scalability and maintainability.",
                 "Added calibration support for new RF equipment.",
@@ -20,39 +20,12 @@
             "location": "Vancouver, BC",
             "from": "2024-01",
             "to": "2024-04",
-            "description": [
+            "descriptions": [
                 "Conducted weekly workshops for undergraduate students to solidify understanding of complex physics problems.",
                 "Delivered concise lectures about waves and basic hydrostatics to ensure material comprehension.",
                 "Provided one-on-one assistance during office hours, assessing individual learning needs and reinforcing key concepts."
             ],
             "weight": 75
-        },
-        {
-            "title": "General Labourer",
-            "institution": "Keith Panel Systems",
-            "location": "Burnaby, BC",
-            "from": "2024-05",
-            "to": "2024-08",
-            "description": [""],
-            "weight": 50
-        },
-        {
-            "title": "Cashier, Production",
-            "institution": "Pizza Hut LP",
-            "location": "Richmond, BC",
-            "from": "2017-09",
-            "to": "2018-10",
-            "description": [""],
-            "weight": 50
-        },
-        {
-            "title": "Maintenance Technician",
-            "institution": "RCB Cleaning Services Inc.",
-            "location":"Vancouver, BC",
-            "from": "2021-07",
-            "to": "2021-07",
-            "description": [""],
-            "weight": 50
         }
     ]
 }
