@@ -1,0 +1,16 @@
+{
+    "programs": [
+        {
+            "name": "University of British Columbia",
+            "program": "B. Sc. Physics",
+            "from": "2019-09",
+            "to": "2024-05"
+        },
+        {
+            "name": "British Columbia Institute of Technology",
+            "program": "Computer Systems Technology Diploma",
+            "from": "2024-09",
+            "to": ""
+        }
+    ]
+}
