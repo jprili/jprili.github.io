@@ -166,7 +166,8 @@ const loadSkill = async (skillID) => {
 
     if (skillID === "software") {
         loadSoftwareSkills(skill, skillContainer);
-        expandSoftware(skills.software[0], skillContainer);
+        const currentSoftware = skills.software.filter((software) => software.id == selectedSoftware)[0];
+        expandSoftware(currentSoftware, skillContainer);
     } else {
         loadOtherSkills(skill, skillContainer);
     }
