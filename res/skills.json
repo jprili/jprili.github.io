@@ -1,0 +1,49 @@
+{
+    "software": [
+        {
+            "name": "Python",
+            "libraries": [
+                "NumPy",
+                "SciPy",
+                "Matplotlib",
+                "Pandas",
+                "scikit-learn",
+                "TensorFlow"
+            ],
+            "proficiency": 9
+        },
+        {
+            "name": "Java",
+            "libraries": ["Swing", "jUnit"],
+            "proficiency": 6
+        },
+        {
+            "name": "MATLAB",
+            "libraries": [],
+            "proficiency": 7
+        },
+        {
+            "name": "JavaScript",
+            "libraries": ["Mongoose", "Express.js", "Firebase"],
+            "proficiency": 8
+        },
+        {
+            "name": "C++",
+            "libraries": ["C++ STL", "dpp"],
+            "proficiency": 6
+        },
+        {
+            "name": "Ruby",
+            "libraries": ["Rails"],
+            "proficiency": 2
+        }
+    ],
+    "hardware": [
+        "Electrical & RF Equipment",
+        "NI-VISA",
+        "Circuit Prototyping",
+        "Microcontrollers"
+    ],
+    "documentation": ["MSOffice", "LibreOffice", "LaTeX", "Markdown"],
+    "other": ["Systematic", "Adaptable", "Fast-learner", "Communicative"]
+}
