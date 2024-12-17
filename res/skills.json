@@ -34,7 +34,7 @@
         {
             "id": "cpp",
             "name": "C++",
-            "libraries": ["C++ STL", "dpp"],
+            "libraries": ["C++ STL", "D++"],
             "proficiency": 6
         },
         {
