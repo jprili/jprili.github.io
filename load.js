@@ -157,7 +157,7 @@ const loadSkill = async (skillID) => {
 
     if (skillID === "software") {
         loadSoftwareSkills(skill, skillContainer);
-        expandSoftware(skills.software[0], skillContainer);
+        expandSoftware(skills.software[0], skillContainer)
     } else {
         loadOtherSkills(skill, skillContainer);
     }
@@ -167,11 +167,7 @@ const loadSkill = async (skillID) => {
 
 const setup = async () => {
     loadWork();
-    let skills = await loadSkill(selectedSkillTab);
-    expandSoftware(
-        skills.software[0],
-        document.getElementById("skill-content")
-    );
+    loadSkill(selectedSkillTab);
 
     document.querySelectorAll(".tab-item").forEach((item) => {
         item.addEventListener("click", () => {
