@@ -76,11 +76,13 @@ const expandSoftware = (softwareSkill) => {
 
 const loadSoftwareSkills = (softwareSkills, skillContainer) => {
     skillContainer.className = "flex flex-wrap justify-around";
+    skillContainer.innerHTML = ""
 
     for (let software of softwareSkills) {
         let box = document.createElement("div");
         box.id = software.id;
-        box.className = "p-4 bg-1 rounded-md gap-4";
+        box.className = "px-4 rounded-md gap-4";
+        box.classList.add(box.id == selectedSoftware ? "bg-1": "bg-none")
 
         let name = document.createElement("h3");
         name.textContent = software.name;
@@ -90,6 +92,7 @@ const loadSoftwareSkills = (softwareSkills, skillContainer) => {
 
         box.addEventListener("click", () => {
             selectedSoftware = software.id;
+            loadSoftwareSkills(softwareSkills, skillContainer)
             expandSoftware(software);
         });
 
@@ -104,6 +107,10 @@ const loadSkill = async (skillID) => {
     const skills = await response.json();
     const skill = skills[skillID];
 
+    document.querySelectorAll(".tab-item").forEach((item) => {item.classList.remove("underline")})
+
+    selectedSkillTab = skillID
+    document.querySelector(`.tab-item#${selectedSkillTab}`).classList.add("underline")
     let skillContainer = document.getElementById("skill-content");
     skillContainer.innerHTML = "";
     selectedSkillTab = skillID
