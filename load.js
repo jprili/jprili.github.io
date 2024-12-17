@@ -74,19 +74,28 @@ const expandSoftware = (softwareSkill, skillContainer) => {
     }
 
     let softwareDiv = document.createElement("div");
-    softwareDiv.className = "bg-1 rounded-md";
+    softwareDiv.className = "box-sizing p-3 bg-1 rounded-md";
 
     let proficiencyElement = document.createElement("p");
-    proficiencyElement.textContent = softwareSkill.proficiency;
+    proficiencyElement.textContent = `Proficiency: ${softwareSkill.proficiency}/10`;
+
+    let label = document.createElement("h2");
+    label.className = "font-bold";
+    label.textContent = "Libraries/Frameworks:";
 
     let librariesElement = document.createElement("ul");
+    librariesElement.className = "flex flex-wrap gap-4 justify-around px-4";
     for (let library of softwareSkill.libraries) {
         let item = document.createElement("li");
         item.textContent = library;
+        item.className = "list-disc"
         librariesElement.appendChild(item);
     }
 
     softwareDiv.appendChild(proficiencyElement);
+    if (softwareSkill.libraries.length > 0) {
+        softwareDiv.appendChild(label)
+    }
     softwareDiv.appendChild(librariesElement);
 
     skillContainer.appendChild(softwareDiv);
@@ -123,13 +132,13 @@ const loadSoftwareSkills = (softwareSkills, skillContainer) => {
 };
 
 const loadOtherSkills = (skills, skillContainer) => {
-    let skillsList = document.createElement("div");
-    skillsList.className = "flex flex-col md:flex-row justify-around";
+    let skillsList = document.createElement("ul");
+    skillsList.className = "flex flex-col md:flex-row justify-around mx-4";
     skillContainer.innerHTML = "";
 
     for (let skill of skills) {
-        let item = document.createElement("p");
-        item.className = "rounded-md gap-4";
+        let item = document.createElement("li");
+        item.className = "rounded-md gap-4 list-disc";
         item.textContent = skill;
 
         skillsList.appendChild(item);
@@ -157,7 +166,7 @@ const loadSkill = async (skillID) => {
 
     if (skillID === "software") {
         loadSoftwareSkills(skill, skillContainer);
-        expandSoftware(skills.software[0], skillContainer)
+        expandSoftware(skills.software[0], skillContainer);
     } else {
         loadOtherSkills(skill, skillContainer);
     }
