@@ -1,6 +1,7 @@
 {
     "software": [
         {
+            "id": "python",
             "name": "Python",
             "libraries": [
                 "NumPy",
@@ -13,26 +14,31 @@
             "proficiency": 9
         },
         {
+            "id": "java",
             "name": "Java",
             "libraries": ["Swing", "jUnit"],
             "proficiency": 6
         },
         {
+            "id": "matlab",
             "name": "MATLAB",
             "libraries": [],
             "proficiency": 7
         },
         {
+            "id": "js",
             "name": "JavaScript",
             "libraries": ["Mongoose", "Express.js", "Firebase"],
             "proficiency": 8
         },
         {
+            "id": "cpp",
             "name": "C++",
             "libraries": ["C++ STL", "dpp"],
             "proficiency": 6
         },
         {
+            "id": "ruby",
             "name": "Ruby",
             "libraries": ["Rails"],
             "proficiency": 2
