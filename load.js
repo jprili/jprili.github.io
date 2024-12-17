@@ -36,7 +36,7 @@ const loadWork = async () => {
     const previousWork = workList["previous-work"];
 
     let workExperience = document.getElementById("work-experience-carousel");
-    for (work of previousWork) {
+    for (let work of previousWork) {
         let card = document
             .getElementById("general-card-template")
             .content.cloneNode(true);
@@ -53,6 +53,18 @@ const loadWork = async () => {
         // Add institution and location
         card.querySelector(".institution").textContent = work.institution;
         card.querySelector(".location").textContent = work.location;
+
+        // Add description
+        let descriptions = document.createElement("ul");
+        descriptions.className = "list-disc"
+        for (let description of work.descriptions) {
+            let point = document.createElement("li");
+            point.textContent = description;
+
+
+            descriptions.appendChild(point);
+        }
+        card.querySelector(".description").appendChild(descriptions);
 
         workExperience.appendChild(card);
     }
