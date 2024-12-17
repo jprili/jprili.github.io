@@ -45,7 +45,7 @@ const loadWork = async () => {
         card.querySelector(".title").textContent = work.title;
         const dateStart = new Date(work.from);
         const dateEnd = work.to ? new Date(work.to) : new Date();
-        card.querySelector(".date").textContent = `${work.from} \u2012 ${
+        card.querySelector(".date").textContent = `${work.from} to ${
             work.to
         } (${getDurationString(dateStart, dateEnd)})`;
 
@@ -75,13 +75,13 @@ const expandSoftware = (softwareSkill) => {
 };
 
 const loadSoftwareSkills = (softwareSkills, skillContainer) => {
-    skillContainer.className = "flex flex-wrap justify-around";
+    skillContainer.className = "flex flex-col md:flex-row justify-around";
     skillContainer.innerHTML = ""
 
     for (let software of softwareSkills) {
         let box = document.createElement("div");
         box.id = software.id;
-        box.className = "px-4 rounded-md gap-4";
+        box.className = "flex-grow mx-1 px-1 rounded-md md:rounded-t-md md:rounded-b-none";
         box.classList.add(box.id == selectedSoftware ? "bg-1": "bg-none")
 
         let name = document.createElement("h3");
@@ -100,7 +100,18 @@ const loadSoftwareSkills = (softwareSkills, skillContainer) => {
     }
 };
 
-const loadOtherSkills = (skills, skillContainer) => {};
+const loadOtherSkills = (skills, skillContainer) => {
+    skillContainer.className = "flex flex-col md:flex-row justify-around";
+    skillContainer.innerHTML = ""
+
+    for (let skill of skills) {
+        let item = document.createElement("p");
+        item.className = "rounded-md gap-4";
+        item.textContent = skill;
+
+        skillContainer.appendChild(item);
+    }
+};
 
 const loadSkill = async (skillID) => {
     const response = await fetch("./res/skills.json");
