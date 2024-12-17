@@ -68,11 +68,65 @@ const loadWork = async () => {
     }
 };
 
-const loadSkills = async () => {};
+const expandSoftware = (softwareSkill) => {
+    if (selectedSkillTab != "software") {
+        return
+    }
+};
+
+const loadSoftwareSkills = (softwareSkills, skillContainer) => {
+    skillContainer.className = "flex flex-wrap justify-around";
+
+    for (let software of softwareSkills) {
+        let box = document.createElement("div");
+        box.id = software.id;
+        box.className = "p-4 bg-1 rounded-md gap-4";
+
+        let name = document.createElement("h3");
+        name.textContent = software.name;
+        name.className = "text-bold";
+
+        box.appendChild(name);
+
+        box.addEventListener("click", () => {
+            selectedSoftware = software.id;
+            expandSoftware(software);
+        });
+
+        skillContainer.appendChild(box);
+    }
+};
+
+const loadOtherSkills = (skills, skillContainer) => {};
+
+const loadSkill = async (skillID) => {
+    const response = await fetch("./res/skills.json");
+    const skills = await response.json();
+    const skill = skills[skillID];
+
+    let skillContainer = document.getElementById("skill-content");
+    skillContainer.innerHTML = "";
+    selectedSkillTab = skillID
+
+    if (skillID === "software") {
+        loadSoftwareSkills(skill, skillContainer);
+    } else {
+        loadOtherSkills(skill, skillContainer);
+    }
+};
 
 const setup = () => {
     loadWork();
-    loadSkills();
+    loadSkill(selectedSkillTab);
+    expandSoftware(selectedSoftware);
+
+    document.querySelectorAll(".tab-item").forEach((item) => {
+        item.addEventListener("click", () => {
+            loadSkill(item.id);
+        });
+    });
 };
 
+let selectedSkillTab = "software"
+let selectedSoftware = "python"
 setup();
