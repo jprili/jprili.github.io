@@ -175,6 +175,8 @@ const loadSkill = async (skillID) => {
     return skills;
 };
 
+const loadEducation = () => {}
+
 const setup = async () => {
     loadWork();
     loadSkill(selectedSkillTab);
