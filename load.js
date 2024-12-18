@@ -88,13 +88,13 @@ const expandSoftware = (softwareSkill, skillContainer) => {
     for (let library of softwareSkill.libraries) {
         let item = document.createElement("li");
         item.textContent = library;
-        item.className = "list-disc"
+        item.className = "list-disc";
         librariesElement.appendChild(item);
     }
 
     softwareDiv.appendChild(proficiencyElement);
     if (softwareSkill.libraries.length > 0) {
-        softwareDiv.appendChild(label)
+        softwareDiv.appendChild(label);
     }
     softwareDiv.appendChild(librariesElement);
 
@@ -166,7 +166,9 @@ const loadSkill = async (skillID) => {
 
     if (skillID === "software") {
         loadSoftwareSkills(skill, skillContainer);
-        const currentSoftware = skills.software.filter((software) => software.id == selectedSoftware)[0];
+        const currentSoftware = skills.software.filter(
+            (software) => software.id == selectedSoftware
+        )[0];
         expandSoftware(currentSoftware, skillContainer);
     } else {
         loadOtherSkills(skill, skillContainer);
@@ -175,11 +177,44 @@ const loadSkill = async (skillID) => {
     return skills;
 };
 
-const loadEducation = () => {}
+const loadEducation = async () => {
+    const response = await fetch("./res/education.json");
+    const programsObj = await response.json();
+    const programs = programsObj["programs"];
+
+    let education = document.getElementById("education-carousel");
+    for (let program of programs) {
+        let card = document
+            .getElementById("general-card-template")
+            .content.cloneNode(true);
+
+        card.querySelector(".title").textContent = program.name;
+        card.querySelector(".location").textContent = program.location;
+        card.querySelector(".date").textContent = `${program.from} to ${
+            program.to ? program.to : "Present"
+        }`;
+        card.querySelector(".institution").textContent = program.institution;
+
+        let description = card.querySelector(".description");
+        let courseworks = document.createElement("ul");
+        courseworks.className = "flex md:flex-col md:flex-wrap md:gap-x-8"
+        for (let coursework of program.courseworks) {
+            let workItem = document.createElement("li");
+            workItem.className = "list-disc";
+            workItem.textContent = coursework;
+
+            courseworks.appendChild(workItem);
+        }
+        description.appendChild(courseworks);
+
+        education.appendChild(card);
+    }
+};
 
 const setup = async () => {
     loadWork();
     loadSkill(selectedSkillTab);
+    loadEducation();
 
     document.querySelectorAll(".tab-item").forEach((item) => {
         item.addEventListener("click", () => {

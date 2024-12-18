@@ -1,16 +1,32 @@
 {
     "programs": [
         {
-            "name": "University of British Columbia",
-            "program": "B. Sc. Physics",
+            "institution": "University of British Columbia",
+            "name": "Bachelor of Science in Physics",
+            "location": "Vancouver, BC",
             "from": "2019-09",
-            "to": "2024-05"
+            "to": "2024-05",
+            "courseworks": [
+                "Experimental Physics",
+                "Computational Physics",
+                "Software Construction",
+                "Probabilities",
+                "Energy and Climate",
+                "Writing for Research"
+            ]
         },
         {
-            "name": "British Columbia Institute of Technology",
-            "program": "Computer Systems Technology Diploma",
+            "institution": "British Columbia Institute of Technology",
+            "name": "Computer Systems Technology Diploma",
+            "location":"Vancouver, BC",
             "from": "2024-09",
-            "to": ""
+            "to": "",
+            "courseworks": [
+                "Web Development",
+                "Business Communications",
+                "Business Analysis and System Design",
+                "Programming Methods"
+            ]
         }
     ]
 }
