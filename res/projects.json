@@ -1,0 +1,86 @@
+{
+    "academic": [
+        {
+            "name": "Analysis of Johnson-Nyquist Noise in Electrical Components",
+            "from": "2022-09",
+            "to": "2022-12",
+            "descriptions": [
+                "Performed a series of experiments in an electrical laboratory investigating the effect of cosmic background noise on resistors.",
+                "Wrote a Physical Review Letter on the findings and presenting the results to fellow students and professors."
+            ]
+        },
+        {
+            "name": "AM Radio Receiver",
+            "from": "2021-09",
+            "to": "2021-12",
+            "descriptions": [
+                "Constructed a protoype tunable AM radio receiver from scratch as a part of an experimental physics course.",
+                "Followed circuit diagram schemes to assemble the radio."
+            ]
+        },
+        {
+            "name": "Characterisation of Semiconducting Materials",
+            "link": "https://arxiv.org/abs/2312.05744",
+            "linkName": "arXiv:2312.05744 [cond-mat.mtrl-sci]",
+            "linkType": "arxiv",
+            "from": "2023-09",
+            "to": "2023-12",
+            "descriptions": [
+                "Extracted material information of a semiconducting material using a four-point probing technique called the Van der Pauw method.",
+                "Compiled a scientific paper on the results and its implications for future quantum computing hardware.",
+                "Processed and classified semiconductor data using NumPy and Pandas."
+            ]
+        },
+        {
+            "name": "Machine Learning Interatomic Potentials with Keras API",
+            "link": "https://arxiv.org/abs/2404.18393",
+            "linkName": "arXiv:2404.18393 [physics.comp-ph]",
+            "linkType": "arxiv",
+            "from": "2024-04",
+            "to": "2024-04",
+            "descriptions": [
+                "Implemented a neural network model that regresses energies of crystalline atomic structures as an alternative to density functional theory methods.",
+                "Employed feature engineering, cross-validation, and hyperparameter tuning to search for an optimal model."
+            ]
+        },
+        {
+            "name": "Classification of Habitable Planets",
+            "from": "2024-02",
+            "to": "2024-02",
+            "descriptions": [
+                "Applied different machine learning algorithms to the NASA exoplanet dataset to determine the most accurate model for classifying potentially habitable planets.",
+                "Selected appropriate models using scikit-learn, along with NumPy and Pandas through JupyterLab."
+            ]
+        },
+        {
+            "name": "Numerical Simulations of Physical Phenomena",
+            "from": "2023-09",
+            "to": "2023-12",
+            "descriptions": [
+                "Wrote a program that demonstrates the physical behaviour of two colliding galaxies. (https://youtu.be/Y3ONGXlxWSY)",
+                "Designed and wrote simulations of quantum particles to analyse the time-dependence of 2-dimensional wavefunctions.",
+                "Animated the behaviour of electron spins in a ferromagnetic lattice (Ising Model)."
+            ]
+        },
+        {
+            "name": "Battleship-inspired Video Game",
+            "from": "2022-01",
+            "to": "2022-04",
+            "descriptions": [
+                "Constructed a Battleship-inspired Video Game, which featured a user system and data persistence.",
+                "Gained experience in Java programming, emphasising clean code practices and modular design.",
+                "Demonstrated proficiency in software construction methodologies through systematic design and testing."
+            ]
+        },
+        {
+            "name": "Text-based Single-user Dungeon",
+            "from": "2023-09",
+            "to": "2023-12",
+            "descriptions": [
+                "Created a simple single-user dungeon in Python in which the player interacts with the command line to play the game.",
+                "Adhered to standard systems development cycle which includes planning, analysis, design, and implementation."
+            ]
+        }
+    ],
+    "personal": [{}]
+}
