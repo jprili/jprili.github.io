@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+.lora-400 {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lora-500 {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.lora-600 {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.lora-700 {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lora {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.bg-1 {
+    background-color: #213555;
+}
+
+.bg-2 {
+    background-color: #3E5879;
+}
+
+.fg-2 {
+    color: #D8C4B6;
+}
+
+.fg-1 {
+    color: #F5EFE7;
+}
+
