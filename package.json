@@ -1,0 +1,14 @@
+{
+  "name": "jprili.github.io",
+  "version": "1.0.0",
+  "description": "James' personal website. I still don't know what I'm doing here but   I might just put my Work Experience, some About Me stuff, and things I can do?  It's mostly tentative.",
+  "main": "load.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
