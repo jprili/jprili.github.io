@@ -197,7 +197,7 @@ const loadEducation = async () => {
 
         let description = card.querySelector(".description");
         let courseworks = document.createElement("ul");
-        courseworks.className = "flex md:flex-col md:flex-wrap md:gap-x-8"
+        courseworks.className = "flex flex-col md:flex-row md:flex-wrap grow md:gap-x-8"
         for (let coursework of program.courseworks) {
             let workItem = document.createElement("li");
             workItem.className = "list-disc";
