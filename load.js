@@ -81,7 +81,7 @@ const expandSoftware = (softwareSkill, skillContainer) => {
 
     let label = document.createElement("h2");
     label.className = "font-bold";
-    label.textContent = "Libraries/Frameworks:";
+    label.textContent = "Associated Technologies";
 
     let librariesElement = document.createElement("ul");
     librariesElement.className = "flex flex-wrap gap-4 justify-around px-4";
