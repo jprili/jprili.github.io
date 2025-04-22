@@ -1,11 +1,14 @@
-import './App.css';
+import Header from "./Header";
 
 const App = () => {
-    const text = "hello world";
+    const name = "James Paolo Rili";
     return (
-      <div className="content">
-        <p className="text-3xl font-bold underline">{text}</p>
-      </div>
+        <>
+        <Header/>
+        <div className="content">
+            <p className="text-3xl font-bold">{name}</p>
+        </div>
+        </>
   );
 };
 

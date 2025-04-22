@@ -1,1 +1,16 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+* {
+    font-family: jbmono, Consolas, Courier, monospace;
+    color: var(--color-slate-200);
+}
+
+@font-face {
+    font-family: "jbmono";
+    src: local("jbmono"), url("./fonts/JetBrainsMono-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "jbmono";
+    src: local("jbmono"), url("./fonts/JetBrainsMono-VariableFont_wght.ttf") format("truetype");
+}

@@ -9,4 +9,7 @@ root.render(
     <App/>
 );
 
+const body = document.getElementsByTagName("body")[0];
+body.className = "bg-slate-800";
+
 
