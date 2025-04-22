@@ -9,11 +9,16 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
+    "express": "^5.1.0",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.3.1",
-    "@rsbuild/plugin-react": "^1.1.1"
+    "@rsbuild/plugin-react": "^1.1.1",
+    "@tailwindcss/postcss": "^4.1.4",
+    "tailwindcss": "^4.1.4"
   }
 }

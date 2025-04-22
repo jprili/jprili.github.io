@@ -1,11 +1,11 @@
 import './App.css';
 
 const App = () => {
-  return (
-    <div className="content">
-      <h1>James Paolo Rili</h1>
-      <p>Hello!</p>
-    </div>
+    const text = "hello world";
+    return (
+      <div className="content">
+        <p className="text-3xl font-bold underline">{text}</p>
+      </div>
   );
 };
 
