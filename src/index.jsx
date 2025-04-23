@@ -6,9 +6,10 @@ import { useState } from "react";
 
 import './index.css';
 
+
 const main = () => {
     const body = document.getElementsByTagName("body")[0];
-    body.className = "bg-slate-800 max-w-[75%] x-auto";
+    body.className = "max-w-[75%] mx-auto";
 
     const root = ReactDOM
         .createRoot(document.getElementById('root'));

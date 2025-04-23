@@ -1,8 +1,27 @@
 @import "tailwindcss";
 
-* {
+:root {
+    --text-color: #dcd7c9;
+    --bg-def:     #2c3639;
+    --bg-alt:     #3f4e4f; 
+    --fg-def:     #a27b5c;
+
+    --animate-inflate: 0.2s ease-in 1 inflate both;
+}
+
+.animate-inflate:hover {
+    animation: var(--animate-inflate);
+}
+
+@keyframes inflate {
+    from {scale: 1}
+    to   {scale: 1.1};
+}
+
+body {
     font-family: jbmono, Consolas, Courier, monospace;
-    color: var(--color-slate-200);
+    color: var(--text-color);
+    background-color: var(--bg-def);
 }
 
 @font-face {
