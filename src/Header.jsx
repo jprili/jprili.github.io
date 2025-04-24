@@ -1,14 +1,23 @@
 import coloursLight from "./colours";
 
-const HeaderButton = ({bClass, style, text, link}) => {
+const HeaderButton = ({bClass, style, text}) => {
     return (
-        <a className={`${style} px-[10%] md:px-auto hover:bg-(--fg-def) rounded-lg`} href={link}>
-        <div className={`${bClass} text-left md:text-center`}>
+        <div className={`${style} px-[10%] md:px-auto hover:bg-(--fg-def) hover:text-(--bg-def) rounded-lg ${bClass} text-left md:text-center animate-inflate`}>
         <p>{text}</p>
         </div>
-        </a>
     );
 };
+
+const LoadedSection = ({section}) => {
+    switch (section) {
+        case "about":
+            return <About/>;
+        case "projects":
+            return <Projects/>;
+        case "socials":
+            return <Socials/>;
+    }
+}
 
 const Header = () => {
     return (
@@ -16,21 +25,15 @@ const Header = () => {
             <nav className="nav flex flex-col md:flex-row justify-between">
                 <HeaderButton
                     bClass="about"
-                    style="animate-inflate"
                     text="About"
-                    link="#"
                 />
                 <HeaderButton
                     bClass="projects"
-                    style="animate-inflate"
                     text="Projects"
-                    link="projects"
                 />
                 <HeaderButton
                     bClass="socials"
-                    style="animate-inflate"
                     text="Socials"
-                    link="socials"
                 />
             </nav>
         </header>
