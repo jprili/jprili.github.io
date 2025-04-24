@@ -7,6 +7,7 @@
     --fg-def:     #a27b5c;
 
     --animate-inflate: 0.2s ease-in 1 inflate both;
+    --animate-float:   0.2s ease-in 1 float   both;
 }
 
 .animate-inflate:hover {
@@ -16,6 +17,10 @@
 @keyframes inflate {
     from {scale: 1}
     to   {scale: 1.1};
+}
+
+.animate-float {
+    animation: var(--animate-float);
 }
 
 body {
