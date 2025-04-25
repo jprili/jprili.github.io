@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header      from "./Header";
 import PageContext from "./PageContext";
@@ -7,11 +8,10 @@ import Projects    from "./Projects";
 import Socials     from "./Socials";
 import Content     from "./Content";
 
-const Section = () => {
-    const context = useContext(PageContext);
+const Section = ({ page = "about"}) => {
     return (
-        <section className="content">
-            <Content value={context}/>
+        <section id={"content"}>
+            <Content page={page}/>
         </section>
     ); 
 }
@@ -41,11 +41,11 @@ const LandingCard = ({name}) => {
  * base app component
  */
 const App = () => {
-    const initialPage = "landing";
-    const [page, setPage] = useState(initialPage);
     const name = "James Paolo Rili";
     return (
         <>
+        <BrowserRouter>
+        </BrowserRouter>
         <LandingCard name={name}/>
         <Section/>
         </>

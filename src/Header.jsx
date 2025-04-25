@@ -1,23 +1,25 @@
 import { useContext, useState } from "react";
 
 import PageContext from "./PageContext";
-
-import Section     from "./Section";
+import Content     from "./Content";
 
 /**
  * basic header button
  */
 const HeaderButton = ({bClass, style, text}) => {
-    const currentPage = useContext(PageContext);
     let buttonFormat = 
         `${bClass} ${style} px-[10%] rounded-lg text-left \
     md:text-center animate-inflate bg-(--bg-alt)`;
-    if (currentPage !== bClass) {
+    if ("about" !== bClass) {
         buttonFormat += 
         "md:px-auto hover:bg-(--fg-def) hover:text-(--bg-def)";
     }
+
+    const onClick = () => {
+    }
+
     return (
-        <div className={buttonFormat}>
+        <div className={buttonFormat} onClick={onClick}>
         <p>{text}</p>
         </div>
     );

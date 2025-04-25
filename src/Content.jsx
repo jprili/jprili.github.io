@@ -1,8 +1,8 @@
 import { useContext } from "react";
 
-import About    from "./about";
-import Projects from "./projects";
-import Socials  from "./socials";
+import About    from "./About";
+import Projects from "./Projects";
+import Socials  from "./Socials";
 
 import PageContext from "./PageContext";
 
@@ -33,4 +33,4 @@ const Content = ({page}) => {
     );
 }
 
-export default Section;
+export default Content;
