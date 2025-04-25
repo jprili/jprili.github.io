@@ -1,5 +1,9 @@
 const Projects = () => {
-    return;
+    return (
+        <p>
+        This is the Projects page.
+        </p>
+    );
 }
 
 export default Projects;

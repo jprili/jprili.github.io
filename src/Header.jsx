@@ -1,27 +1,36 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+
+import { motion } from "motion/react";
 
 import PageContext from "./PageContext";
 import Content     from "./Content";
+
 
 /**
  * basic header button
  */
 const HeaderButton = ({bClass, style, text}) => {
     let buttonFormat = 
-        `${bClass} ${style} px-[10%] rounded-lg text-left \
-    md:text-center animate-inflate bg-(--bg-alt)`;
-    if ("about" !== bClass) {
-        buttonFormat += 
-        "md:px-auto hover:bg-(--fg-def) hover:text-(--bg-def)";
-    }
-
-    const onClick = () => {
-    }
+        `${bClass} ${style} rounded-lg text-left \
+    md:text-center`;
 
     return (
-        <div className={buttonFormat} onClick={onClick}>
+        <Link to={`/${bClass}`}>
+        <motion.div 
+            className={buttonFormat}
+            whileHover={{
+                scale: 1.2,
+                backgroundColor: "var(--fg-def)",
+                color: "var(--bg-def)"
+            }}
+            whileTap={{
+                scale: 0.8
+            }}
+        >
         <p>{text}</p>
-        </div>
+        </motion.div>
+        </Link>
     );
 };
 

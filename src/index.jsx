@@ -9,12 +9,10 @@ import './index.css';
 const main = () => {
     const body = document.getElementsByTagName("body")[0];
 
-    body.className = "max-w-[75%] mx-auto";
+    body.className = "md:max-w-[65%] mx-[10%] md:mx-auto";
 
     const root = ReactDOM
         .createRoot(document.getElementById('root'));
-    const contentRoot = ReactDOM
-        .createRoot(document.getElementById("content"));
 
     root.render(
         <App/>
