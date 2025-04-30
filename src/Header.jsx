@@ -39,7 +39,7 @@ const HeaderButton = ({bClass, style, text}) => {
  */
 const Header = () => {
     const navFormat = 
-        "nav flex flex-col md:flex-row justify-between text-xl";
+        "nav flex flex-col md:flex-row justify-around text-xl";
     return (
         <header>
             <nav className={navFormat}>
