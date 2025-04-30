@@ -42,13 +42,26 @@ const LandingCard = ({name, fold}) => {
             <motion.div 
                 className={isTop ? "mx-auto" : "m-auto"}
                 initial={{opacity: 0}}
-                animate={{opacity: 1}}
+                animate={{
+                    opacity: 1, 
+                    transform: isTop ? "" : "translateY(-140px)"
+                }}
             >
                 <p className={nameFormat}>{name}</p>
                 <Header/>
-            <div className = "mt-[5%]">
+            <motion.div className = "mt-[5%]"
+                initial={{opacity: 0}} 
+        animate={{
+            opacity: 1,
+            transform: "translateX(-20px)"
+        }}
+        exit={{
+            opacity: 0,
+            transform: "translateX(-20px)"
+        }}
+            >
                 <Outlet/>
-            </div>
+            </motion.div>
             </motion.div>
         </div>
         <Footer/>
