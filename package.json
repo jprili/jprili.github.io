@@ -5,23 +5,23 @@
   "type": "module",
   "scripts": {
     "build": "rsbuild build",
-    "dev": "rsbuild dev --open",
+    "check": "biome check --write",
+    "dev": "rsbuild --open",
+    "format": "biome format --write",
     "preview": "rsbuild preview"
   },
   "dependencies": {
-    "express": "^5.2.1",
-    "motion": "^12.40.0",
-    "postcss": "^8.5.15",
-    "postcss-loader": "^8.2.1",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "react-router-dom": "^7.17.0"
   },
   "devDependencies": {
-    "@rsbuild/core": "^1.7.5",
-    "@rsbuild/plugin-react": "^1.4.6",
-    "@tailwindcss/postcss": "^4.3.0",
-    "tailwindcss": "^4.3.0"
+    "@biomejs/biome": "2.4.15",
+    "@rsbuild/core": "^2.0.9",
+    "@rsbuild/plugin-react": "^2.0.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
 }
