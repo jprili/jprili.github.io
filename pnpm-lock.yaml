@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@rsbuild/plugin-yaml':
+        specifier: ^1.0.5
+        version: 1.0.5(@rsbuild/core@2.0.11(core-js@3.47.0))
       react:
         specifier: ^19.2.6
         version: 19.2.7
@@ -121,6 +124,14 @@ packages:
     resolution: {integrity: sha512-n5m3VxEm6m3Dv1VkI0WnxsildySJ6M+QjGIzkZDy5UebRCIJ1Q/hlQVyhofBL6C+AcsF9fGjlHQkeiteXJSr3Q==}
     peerDependencies:
       '@rsbuild/core': ^2.0.0-0
+    peerDependenciesMeta:
+      '@rsbuild/core':
+        optional: true
+
+  '@rsbuild/plugin-yaml@1.0.5':
+    resolution: {integrity: sha512-alGNdF4BTo2Uw9yYBnR2H0eT9jUqrueOsufWFb78K1Y+sMYLFcSwRpnHp2Gc0y21tVTtLBKOanJRbqIOMjtYBw==}
+    peerDependencies:
+      '@rsbuild/core': ^1.0.0 || ^2.0.0-0
     peerDependenciesMeta:
       '@rsbuild/core':
         optional: true
@@ -343,6 +354,10 @@ snapshots:
       '@rsbuild/core': 2.0.11(core-js@3.47.0)
     transitivePeerDependencies:
       - '@rspack/core'
+
+  '@rsbuild/plugin-yaml@1.0.5(@rsbuild/core@2.0.11(core-js@3.47.0))':
+    optionalDependencies:
+      '@rsbuild/core': 2.0.11(core-js@3.47.0)
 
   '@rspack/binding-darwin-arm64@2.0.6':
     optional: true
