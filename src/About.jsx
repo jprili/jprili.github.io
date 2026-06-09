@@ -3,7 +3,7 @@ import portrait from "../res/portrait.jpg"
 const About = () => {
     return (
         <>
-        <div className="mx-auto md:w-3/4">
+        <div className="my-auto mx-auto md:w-3/4">
         <img
             className={"rounded-full float-center sm:float-left w-[128px] m-[18px]"}
             src={portrait}

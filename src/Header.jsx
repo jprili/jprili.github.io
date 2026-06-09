@@ -12,11 +12,10 @@ import Content     from "./Content";
  */
 const HeaderButton = ({bClass, style, text}) => {
     let buttonFormat = 
-        `${bClass} ${style} rounded-lg text-left \
-    md:text-center`;
+        `${bClass} ${style} rounded-lg md:text-center`;
 
     return (
-        <Link to={`/${bClass}`}>
+        <Link to={`/${bClass}`} className="p-auto">
         <motion.div 
             className={buttonFormat}
             whileHover={{
@@ -41,7 +40,7 @@ const Header = () => {
     const navFormat = 
         "nav flex flex-col md:flex-row justify-around text-xl";
     return (
-        <header>
+        <header className = "sticky top-0">
             <nav className={navFormat}>
                 <PageContext value={""}>
                 <HeaderButton
