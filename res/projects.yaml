@@ -1,7 +1,26 @@
 projects:
   - project:
-      id: crustracer
+      key: crustracer
       name: crustracer
-      desc: null
+      desc: A <i>Rust</i> port 
+        of the raytracer shown in 
+        <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">
+        "Ray Tracing in One Weekend", Shirley et al
+        </a>. 
+      image: null
+      link: null
+  - project:
+      key: toomre
+      name: The Toomre Model
+      desc: Simulation of two colliding galaxies in 
+        three dimensions.
+      image: null
+      link: null
+  - project:
+      key: quantum-well-barrier
+      name: Double-slit Experiment
+      desc: Simulation of a 2D quantum barrier with 
+        two narrow slits to demonstrate the wave-like
+        properties of quantum particles.
       image: null
       link: null

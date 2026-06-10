@@ -5,6 +5,7 @@ const Projects = () => {
     let cards = parseProjects().map(ProjectCard);
     return (
         <div className="content">
+            <h2>Projects and Papers</h2>
             <div className="projects">
                 { cards }
             </div>

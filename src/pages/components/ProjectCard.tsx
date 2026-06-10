@@ -3,8 +3,15 @@ import type { Project } from "../../data/Project";
 const ProjectCard = (project: Project) => {
     return (
         <div className="p-card" key={project.key}>
-            <h2>{project.name}</h2>
-            <p>{project.desc || "No description found."}</p>
+            <div className="p-title">
+                <h3>{project.name}</h3>
+                { /* TODO: tags */ }
+            </div>
+            <p 
+                dangerouslySetInnerHTML={{ 
+                    __html: project.desc || "No description found." 
+                }}
+            />
         </div>
     )
 }

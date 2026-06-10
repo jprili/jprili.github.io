@@ -9,7 +9,9 @@ type Project  = {
 }
 
 const parseProjects = (): Project[] => {;
-    let projects = raw.projects.map((x: any) => x.project);
+    let projects: Project[] = raw
+        .projects
+        .map((x: any) => x.project as Project);
     return projects || [];
 }
 

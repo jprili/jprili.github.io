@@ -33,3 +33,8 @@ nav {
 .content {
   min-height: 100vh;
 }
+
+.p-card {
+  display: flex;
+  flex-direction: row;
+}
