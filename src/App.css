@@ -34,7 +34,7 @@ nav {
   min-height: 100vh;
 }
 
-.p-card {
+.p-title {
   display: flex;
   flex-direction: row;
 }
