@@ -24,3 +24,18 @@ projects:
         properties of quantum particles.
       image: null
       link: null
+  - project:
+      key: gnn-mlip
+      name: ML Potentials with Keras
+      desc: Training and prediction of crystalline structure
+        potentials to compare with DFT calculations.
+      image: null
+      link: null
+  - project:
+      key: semiconductor
+      name: Characterisation of Semiconducting Materials
+      desc: Analysis of a thin semiconducting sheet (GaAs) using
+        the Van der Pauw method and Hall Effect to provide
+        an analogue to its Quantum Hall Effect and Quantum Dots.
+      image: null
+      link: null
