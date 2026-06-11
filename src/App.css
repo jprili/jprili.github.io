@@ -5,6 +5,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  max-width:80vh;
   width: 90%;
   margin: 0% auto;
 }
@@ -37,4 +38,21 @@ nav {
 .p-title {
   display: flex;
   flex-direction: row;
+}
+
+.p-title > h3 {
+  margin: 0;
+}
+
+.p-card {
+  border: solid;
+  border-radius: 20px;
+  border-color: #000;
+  padding: 10px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
