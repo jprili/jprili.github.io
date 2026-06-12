@@ -1,12 +1,40 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+    let [currentPath, setCurrent] = useState(window.location.pathname);
+    let paths: { [key: string]: string } = {
+        "home": "/",
+        "projects": "/projects"
+    }
+    let toRender = (
+        <>
+        {
+            // Could be optimised
+            Object.keys(paths)
+                .map(
+                (x: string) => 
+                    currentPath == paths[x] ?
+                    <Link 
+                        key={x} 
+                        className="current" 
+                        to={paths[x]}
+                        onClick = { () => setCurrent(paths[x]) }
+                    >{x}</Link>
+                    : <Link 
+                        key={x} 
+                        to={paths[x]}
+                        onClick = { () => setCurrent(paths[x]) }
+                    >{x}</Link>
+            )
+        }
+        </>
+    )
     return (
         <header>
             <h1> James Paolo Rili </h1>
             <nav>
-                <Link to="/">home</Link>
-                <Link to="/projects">projects</Link> 
+                { toRender }
             </nav>
         </header>
     );
