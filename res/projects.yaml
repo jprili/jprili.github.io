@@ -7,35 +7,40 @@ projects:
         <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">
         "Ray Tracing in One Weekend", Shirley et al
         </a>. 
-      image: null
       link: null
+      youtube: null
+      github: https://github.com/jprili/crustracer
   - project:
       key: toomre
       name: The Toomre Model
       desc: Simulation of two colliding galaxies in 
         three dimensions.
-      image: null
       link: null
+      youtube: https://youtu.be/Y3ONGXlxWSY
+      github: https://github.com/jprili/simulation-archive/tree/main/project-1
   - project:
-      key: quantum-well-barrier
+      key: slit-survey
       name: Double-slit Experiment
       desc: Simulation of a 2D quantum barrier with 
         two narrow slits to demonstrate the wave-like
         properties of quantum particles.
-      image: null
       link: null
+      youtube: https://youtu.be/LtcPcRGzlZQ
+      github: https://github.com/jprili/simulation-archive/tree/main/project-2
   - project:
       key: gnn-mlip
-      name: ML Potentials with Keras
+      name: ML Interatomic Potentials with Keras
       desc: Training and prediction of crystalline structure
         potentials to compare with DFT calculations.
-      image: null
-      link: null
+      link: https://arxiv.org/abs/2404.18393
+      youtube: null
+      github: https://github.com/jprili/gnn-mlip
   - project:
       key: semiconductor
       name: Characterisation of Semiconducting Materials
       desc: Analysis of a thin semiconducting sheet (GaAs) using
         the Van der Pauw method and Hall Effect to provide
         an analogue to its Quantum Hall Effect and Quantum Dots.
-      image: null
-      link: null
+      link: https://arxiv.org/abs/2312.05744
+      youtube: null
+      github: null
