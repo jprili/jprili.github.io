@@ -42,6 +42,12 @@ nav {
 
 .p-title > h3 {
   margin: 0;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  left: 5px;
+  bottom: 25px;
+  background-color: #fff;
 }
 
 .p-card {
@@ -54,5 +60,5 @@ nav {
 .projects {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
 }

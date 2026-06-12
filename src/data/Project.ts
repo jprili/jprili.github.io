@@ -6,6 +6,11 @@ type Project  = {
     desc:  string | null;
     image: string | null;
     link:  string | null;
+    tags: [string, string] | null;
+}
+
+const renderTags = (project: Project) => {
+    
 }
 
 const parseProjects = (): Project[] => {;
@@ -17,5 +22,6 @@ const parseProjects = (): Project[] => {;
 
 export { 
     type Project, 
-    parseProjects 
+    parseProjects,
+    renderTags
 };
