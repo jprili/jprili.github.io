@@ -15,7 +15,7 @@ const IconLink = (key: string, href: string | null) => {
         return <></>
     }
     return (
-        <a className="icon-link" href={href}>
+        <a className="i-link" href={href}>
             <FontAwesomeIcon icon={ICON_LUT[key]}/>
         </a>
     )
