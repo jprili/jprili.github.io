@@ -2,7 +2,6 @@ import type { Project } from "../data/Project";
 import { Tags } from "../components/Tags";
 
 const ProjectCard = (project: Project) => {
-    console.debug(project);
     return (
         <div className="p-card" key={project.key}>
             <div className="p-title">
