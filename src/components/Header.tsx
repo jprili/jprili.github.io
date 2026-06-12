@@ -17,12 +17,13 @@ const Header = () => {
                     currentPath == paths[x] ?
                     <Link 
                         key={x} 
-                        className="current" 
+                        className="nav-link current" 
                         to={paths[x]}
                         onClick = { () => setCurrent(paths[x]) }
                     >{x}</Link>
                     : <Link 
                         key={x} 
+                        className="nav-link"
                         to={paths[x]}
                         onClick = { () => setCurrent(paths[x]) }
                     >{x}</Link>

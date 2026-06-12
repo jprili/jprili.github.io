@@ -94,6 +94,15 @@ nav {
   color: #000;
 }
 
+.nav-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.current {
+  text-decoration: underline;
+}
+
 @font-face {
   font-family: 'CMUSerif';
   src: local('CMUSerif'), url(./fonts/cmunrm.woff) format('woff');
