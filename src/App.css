@@ -1,0 +1,165 @@
+html {
+  height: 100%;
+  font-family: CMUSerif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 90vh;
+  margin: 0% auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: linear-gradient(
+    to bottom, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  min-height: 10vh;
+  padding: 0 10px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  bottom: 0;
+  min-height: 10vh;
+  background: linear-gradient(
+    to top, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 255, 255, 1) 20%, 
+    rgba(0, 0, 0, 0)       100%
+  );
+  padding: 0 10px;
+}
+
+#socials {
+  display: flex;
+  flex-direction: row;
+  margin: auto 0;
+  gap: 5%;
+  font-size: 18pt;
+}
+
+footer > p {
+  margin: auto 0;
+}
+
+nav {
+  gap: 20%;
+  min-width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  
+}
+
+.content {
+  min-height: 100vh;
+}
+
+.home {
+  min-height: 90vh;
+}
+
+.p-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-title > h3 {
+  margin: 0;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  left: 5px;
+  bottom: 25px;
+  background-color: #fff;
+  width: max-content;
+}
+
+.p-links {
+  margin-top: -10px;
+}
+
+.p-card {
+  border: solid;
+  border-radius: 20px;
+  border-color: #000;
+  padding: 10px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.i-link {
+  margin: 1%;
+  padding-top: 0;
+  color: #000;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.current {
+  text-decoration: underline;
+}
+
+.portrait {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+
+.intro-body {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.intro-body > * {
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: 'CMUSerif';
+  src: local('CMUSerif'), url(./fonts/cmunrm.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CMUSerif';
+  src: local('CMUSerif'), url(./fonts/cmunbx.woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CMUSerif';
+  src: local('CMUSerif'), url(./fonts/cmunti.woff) format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CMUSerif';
+  src: local('CMUSerif'), url(./fonts/cmunbi.woff) format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
