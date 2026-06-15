@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
-    let [currentPath, setCurrent] = useState(window.location.pathname);
     let paths: { [key: string]: string } = {
         "home": "/",
         "projects": "/projects"
     }
+    const { pathname } = useLocation();
     let toRender = (
         <>
         {
@@ -14,18 +13,16 @@ const Header = () => {
             Object.keys(paths)
                 .map(
                 (x: string) => 
-                    currentPath == paths[x] ?
+                    pathname == paths[x] ?
                     <Link 
                         key={x} 
                         className="nav-link current" 
                         to={paths[x]}
-                        onClick = { () => setCurrent(paths[x]) }
                     >{x}</Link>
                     : <Link 
                         key={x} 
                         className="nav-link"
                         to={paths[x]}
-                        onClick = { () => setCurrent(paths[x]) }
                     >{x}</Link>
             )
         }
