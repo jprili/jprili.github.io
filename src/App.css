@@ -124,16 +124,17 @@ nav {
   border-radius: 100%;
   width: 100px;
   height: 100px;
+  align-self: center;
 }
 
 .intro-body {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-self: center;
 }
 
-.intro-body > * {
-  margin: 0 auto;
+.intro-body > p {
+  margin: 5vh 10vw;
 }
 
 @font-face {
