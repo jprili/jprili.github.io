@@ -1,44 +1,45 @@
 import portrait from "../../res/portrait.jpg";
 import * as THREE from "three";
-import { Canvas, useFrame, type ThreeElements} from "@react-three/fiber";
-import React, { useRef, useState } from "react";
-import { TrackballControls } from "three/examples/jsm/Addons.js";
+import { Canvas, type ThreeElements} from "@react-three/fiber";
+import { useRef, useState } from "react";
+import { TrackballControls, Edges, OrbitControls } from "@react-three/drei";
 
-const Box = (props: ThreeElements["mesh"]) => {
-    const meshRef = useRef<THREE.Mesh>(null!);
-    const [hovered, setHover] = useState(false);
-    const [active, setActive] = useState(false);
-
-    useFrame((_, delta) => (meshRef.current.rotation.x += delta))    
+const Dodecahedron = (props: ThreeElements["mesh"]) => {
     return (
-        <mesh
-            {...props}
-            ref = {meshRef}
-            scale = {active ? 1.5 : 1}
-            onClick = { () => setActive(!active) }
-            onPointerOver = { () => setHover(true) }
-            onPointerOut  = { () => setHover(false) }
-            >
+        <mesh {...props}>
         <dodecahedronGeometry args={[1, 0]} />
-        <meshPhongMaterial color = {hovered ? 0xffff00 : "white"}/>
+        <meshBasicMaterial 
+            color={"white"} 
+            transparent={true}
+            opacity={0.1}
+        />
+        <Edges
+            lineWidth={2}
+            scale={1}
+            threshold={10}
+            color={0x000000}
+        />
         </mesh>
     )
 }
 
 const Home = () => {
-
+    const meshRef = useRef<THREE.Mesh>(null!);
+    const [trackballEnabled, setTrackballEnabled] = useState(false);
     return (
         <div className="content home">
             <Canvas>
-                <ambientLight intensity = {Math.PI / 2} />
-                <spotLight 
-                    position = {[10, 10, 10]} 
-                    angle    = { 0.15 }
-                    penumbra = {1}
-                    decay    = {0}
-                    intensity = { Math.PI } 
+                <Dodecahedron 
+                    position={[0, 0, 0]} 
+                    rotation={[1, 1, 0]}
+                    ref={meshRef}
+                    onClick={() => setTrackballEnabled(true)}
                 />
-                <Box position={[0, 0, 0]}/>
+                <OrbitControls 
+                    enabled={!trackballEnabled} 
+                    autoRotate = {true}
+                />
+                <TrackballControls enabled={trackballEnabled}/>
             </Canvas>
         </div>
     );
