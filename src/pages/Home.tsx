@@ -1,56 +1,117 @@
-import portrait from "../../res/portrait.jpg";
 import * as THREE from "three";
-import { Canvas, type ThreeElements} from "@react-three/fiber";
+import { 
+    Canvas, useFrame, useThree, type ThreeElements
+} from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { TrackballControls, Edges, OrbitControls, Html } from "@react-three/drei";
-import { normVec, GOL_RAT} from "../data/util"
+import {
+    Edges, OrbitControls, Html, TrackballControls
+} from "@react-three/drei";
 
 const Dodecahedron = (props: ThreeElements["mesh"]) => {
     return (
         <mesh {...props}>
-        {/* BUG: BLENDING DOES NOT WORK PROPERLY */}
-        <Html 
-            center
-            occlude={"blending"}
-            position={
-                normVec([1, 1, 1])
-                .multiplyScalar(1.4)
-            } 
-        >
-            <p style={{}} >home</p>
-        </Html>
-        <dodecahedronGeometry args={[1, 0]}/>
         <meshBasicMaterial 
-            color={"orange"} 
+            color={"white"}
             transparent={true}
-            opacity={1}
+            opacity={0.2}
         />
         <Edges
+            transparent
+            opacity={0.8}
             lineWidth={2}
             scale={1}
             threshold={10}
             color={0x000000}
         />
+        <dodecahedronGeometry args={[1, 0]}/>
         </mesh>
     )
 }
 
+const SurfaceLinks = (
+    props: any
+) => {
+    const [isBlending, setBlending] = useState(false);
+
+    const { camera } = useThree();
+
+    const linkRef  = useRef<THREE.Mesh>(null!);
+    const worldPos = useRef(new THREE.Vector3());
+    const offset   = useRef(props.offset);
+    
+    useFrame(() => {
+        linkRef.current.getWorldPosition(worldPos.current); 
+        worldPos.current.add(offset.current);
+        const distance = camera
+            .position.distanceTo(worldPos.current);
+        if ((distance > 5) !== isBlending)
+        setBlending(distance > 5);
+    });
+    return (
+        <mesh ref={linkRef}>
+        <Html 
+            center
+            occlude={isBlending ? "blending" : "raycast"}
+            position={
+                props.offset
+            } 
+            distanceFactor={5}
+        >
+            <div className="i-link">
+                <a href={props.to}>{props.display}</a>
+            </div>
+        </Html>
+        </mesh>
+    );
+}
+
 const Home = () => {
     const meshRef = useRef<THREE.Mesh>(null!);
-    const [trackballEnabled, setTrackballEnabled] = useState(false);
+    const [isTrackball, setTrackball] = useState(false);
     return (
         <div className="content home">
-            <Canvas style={{ height: "100vh" }}>
+            <Canvas 
+                camera={{
+                    position: [0, 0, 5],
+                    fov: 50
+                }}
+                style={{ 
+                    height: "65vh", 
+                    backgroundColor: "transparent"
+                }}
+            >
                 <Dodecahedron
                     position={[0, 0, 0]} 
                     ref={meshRef}
-                    onClick={() => setTrackballEnabled(true)}
+                    onClick={() => setTrackball(true)}
+                />
+                <SurfaceLinks 
+                    offset={
+                        new THREE.Vector3(1, 1, 1)
+                        .normalize()
+                        .multiplyScalar(1.2)
+                    }
+                    to={"#"}
+                    display={"home"}
+                />
+                <SurfaceLinks 
+                    offset={
+                        new THREE.Vector3(-1, 0, 1)
+                        .normalize()
+                        .multiplyScalar(1.2)
+                    }
+                    to={"#/projects"}
+                    display={"projects"}
                 />
                 <OrbitControls 
-                    enabled={!trackballEnabled} 
-                    autoRotate = {true}
+                    enabled={!isTrackball} 
+                    autoRotate = {!isTrackball}
+                    enableZoom = {false}
                 />
-                <TrackballControls enabled={trackballEnabled}/>
+                <TrackballControls 
+                    enabled={isTrackball}
+                    noZoom={true}
+                />
             </Canvas>
         </div>
     );
