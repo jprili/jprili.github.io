@@ -2,16 +2,28 @@ import portrait from "../../res/portrait.jpg";
 import * as THREE from "three";
 import { Canvas, type ThreeElements} from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { TrackballControls, Edges, OrbitControls } from "@react-three/drei";
+import { TrackballControls, Edges, OrbitControls, Html } from "@react-three/drei";
+import { normVec, GOL_RAT} from "../data/util"
 
 const Dodecahedron = (props: ThreeElements["mesh"]) => {
     return (
         <mesh {...props}>
-        <dodecahedronGeometry args={[1, 0]} />
+        {/* BUG: BLENDING DOES NOT WORK PROPERLY */}
+        <Html 
+            center
+            occlude={"blending"}
+            position={
+                normVec([1, 1, 1])
+                .multiplyScalar(1.4)
+            } 
+        >
+            <p style={{}} >home</p>
+        </Html>
+        <dodecahedronGeometry args={[1, 0]}/>
         <meshBasicMaterial 
-            color={"white"} 
+            color={"orange"} 
             transparent={true}
-            opacity={0.1}
+            opacity={1}
         />
         <Edges
             lineWidth={2}
@@ -28,10 +40,9 @@ const Home = () => {
     const [trackballEnabled, setTrackballEnabled] = useState(false);
     return (
         <div className="content home">
-            <Canvas>
-                <Dodecahedron 
+            <Canvas style={{ height: "100vh" }}>
+                <Dodecahedron
                     position={[0, 0, 0]} 
-                    rotation={[1, 1, 0]}
                     ref={meshRef}
                     onClick={() => setTrackballEnabled(true)}
                 />
