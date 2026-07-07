@@ -1,116 +1,112 @@
 import * as THREE from "three";
 import { 
-    Canvas, useFrame, useThree, type ThreeElements
+    Canvas, type ThreeElements
 } from "@react-three/fiber";
-import { useRef, useState } from "react";
+import { useRef, useState} from "react";
 import {
-    Edges, OrbitControls, Html, TrackballControls
+    Edges, 
+    OrbitControls, 
+    Html,
 } from "@react-three/drei";
 
-const Dodecahedron = (props: ThreeElements["mesh"]) => {
-    return (
-        <mesh {...props}>
-        <meshBasicMaterial 
-            color={"white"}
-            transparent={true}
-            opacity={0.2}
-        />
-        <Edges
-            transparent
-            opacity={0.8}
-            lineWidth={2}
-            scale={1}
-            threshold={10}
-            color={0x000000}
-        />
-        <dodecahedronGeometry args={[1, 0]}/>
-        </mesh>
-    )
-}
-
-const SurfaceLinks = (
+const SurfaceLink = (
     props: any
 ) => {
-    const [isBlending, setBlending] = useState(false);
-
-    const { camera } = useThree();
-
-    const linkRef  = useRef<THREE.Mesh>(null!);
-    const worldPos = useRef(new THREE.Vector3());
-    const offset   = useRef(props.offset);
-    
-    useFrame(() => {
-        linkRef.current.getWorldPosition(worldPos.current); 
-        worldPos.current.add(offset.current);
-        const distance = camera
-            .position.distanceTo(worldPos.current);
-        if ((distance > 5) !== isBlending)
-        setBlending(distance > 5);
-    });
+    const meshRef = useRef<THREE.Mesh>(null!);
     return (
-        <mesh ref={linkRef}>
-        <Html 
-            center
-            occlude={isBlending ? "blending" : "raycast"}
-            position={
-                props.offset
-            } 
-            distanceFactor={5}
+        <mesh 
+            ref={meshRef}
+            position={props.position} 
         >
-            <div className="i-link">
-                <a href={props.to}>{props.display}</a>
-            </div>
-        </Html>
+            <Html 
+                center
+                occlude="blending"
+                distanceFactor={15}
+                material={
+                    <meshBasicMaterial
+                        transparent
+                        opacity={0}
+                    />
+                }
+            >
+                <span className="i-link">
+                    <a href={props.to}>{props.display}</a>
+                </span >
+            </Html>
         </mesh>
     );
 }
 
+const Model = (props: ThreeElements["mesh"]) => {
+    // BUG: rendering problem here
+    return (
+        <group>
+            <mesh {...props}
+            occlusionTest={true}
+            >
+                <meshToonMaterial
+                    transparent
+                    opacity={0}
+                />
+                <Edges 
+                    lineWidth={2}
+                    color={"black"}
+                    occlusionTest={true}
+                />
+                <dodecahedronGeometry
+                    args={[1, 0]}
+                />
+            </mesh>
+            <SurfaceLink 
+                position={
+                    new THREE.Vector3(1, 1, 1)
+                    .normalize()
+                    .multiplyScalar(1.2)
+                }
+                to={"#"}
+                display={"home"}
+            />
+            <SurfaceLink
+                position={
+                    new THREE.Vector3(-1, -1, -1)
+                    .normalize()
+                    .multiplyScalar(1.2)
+                }
+                to={"#/projects"}
+                display={"projects"}
+            />
+        </group>
+    )
+}
+
+
 const Home = () => {
-    const meshRef = useRef<THREE.Mesh>(null!);
-    const [isTrackball, setTrackball] = useState(false);
+    const modelRef = useRef<THREE.Mesh>(null!);
+    const [isAutoRotate, setAutoRotate] = useState(true);
     return (
         <div className="content home">
             <Canvas 
                 camera={{
                     position: [0, 0, 5],
-                    fov: 50
+                    zoom: 3,
+                    fov: 90
                 }}
                 style={{ 
                     height: "65vh", 
                     backgroundColor: "transparent"
                 }}
+                
             >
-                <Dodecahedron
-                    position={[0, 0, 0]} 
-                    ref={meshRef}
-                    onClick={() => setTrackball(true)}
+                <Model
+                    ref={modelRef}
+                    onClick={() => setAutoRotate(false)}
                 />
-                <SurfaceLinks 
-                    offset={
-                        new THREE.Vector3(1, 1, 1)
-                        .normalize()
-                        .multiplyScalar(1.2)
-                    }
-                    to={"#"}
-                    display={"home"}
-                />
-                <SurfaceLinks 
-                    offset={
-                        new THREE.Vector3(-1, 0, 1)
-                        .normalize()
-                        .multiplyScalar(1.2)
-                    }
-                    to={"#/projects"}
-                    display={"projects"}
-                />
-                <OrbitControls 
-                    enabled={!isTrackball} 
-                    autoRotate = {!isTrackball}
+                <ambientLight
+                    intensity={Math.PI / 2}
+                /> 
+                <OrbitControls  
+                    autoRotate = {isAutoRotate}
                     enableZoom = {false}
-                />
-                <TrackballControls 
-                    enabled={isTrackball}
-                    noZoom={true}
                 />
             </Canvas>
         </div>
