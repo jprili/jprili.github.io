@@ -75,6 +75,15 @@ const Model = (props: ThreeElements["mesh"]) => {
                 to={"#/projects"}
                 display={"projects"}
             />
+            <SurfaceLink
+                position={
+                    new THREE.Vector3(1, -1, -1)
+                    .normalize()
+                    .multiplyScalar(1.2)
+                }
+                to={"#/experience"}
+                display={"experience"}
+            />
         </group>
     )
 }

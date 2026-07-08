@@ -3,7 +3,7 @@ import { Tags } from "../components/Tags";
 
 const ProjectCard = (project: Project) => {
     return (
-        <div className="p-card" key={project.key}>
+        <div className="card" key={project.key}>
             <div className="p-title">
                 <h3>{project.name}</h3>
                 { Tags(project) }
