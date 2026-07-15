@@ -198,11 +198,20 @@ footer > p {
     background-color: #fff;
     display:        flex; 
     flex-direction: column;
-    gap:            20px;
-    align-items:    end;
-    padding: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    gap:            10px;
+    padding:        10px;
+    box-shadow:     0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius:  10px;
+  }
+
+  .nav-link {
+    padding: 0 10px;
+    width: 80px;
     border-radius: 10px;
+  }
+
+  .dropdown-content > .nav-link:hover {
+    scale: 1.2;
   }
 }
 
