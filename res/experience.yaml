@@ -23,8 +23,10 @@
         - react
         - typescript
         - pgsql
-        - aws
-        - atlassian
+        - aws:lambda
+        - aws:aurora
+        - atlassian:jira
+        - atlassian:confluence
 
 - experience:
     key: ubc-ta
@@ -50,4 +52,6 @@
         - react
         - postgres
         - obd-ii
+        - atlassian:trello
+        - agile
     

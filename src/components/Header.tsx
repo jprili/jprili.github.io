@@ -1,4 +1,21 @@
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
+
+const NavDropdown = (props: { children: ReactNode }) => {
+    const { children } = props;
+    return (
+        <nav className="dropdown">
+            <button className="dropdown-button">
+                <FontAwesomeIcon icon={faBars}/>
+            </button>
+            <div className="dropdown-content">
+                { children }
+            </div>
+        </nav>
+    )
+}
 
 const Header = () => {
     let paths: { [key: string]: string } = {
@@ -32,9 +49,9 @@ const Header = () => {
     return (
         <header>
             <h1> James Paolo Rili </h1>
-            <nav>
+            <NavDropdown>
                 { toRender }
-            </nav>
+            </NavDropdown>
         </header>
     );
 };
