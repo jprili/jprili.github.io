@@ -1,4 +1,5 @@
 import type { Experience } from "../data/Experience";
+import { Tag } from "../components/Tag"
 
 const getDisplayDates = (start: Date, end: Date): String => {
     const opts: Intl.DateTimeFormatOptions = {
@@ -13,8 +14,10 @@ const getDisplayDates = (start: Date, end: Date): String => {
     )
     } else {
         return ( 
-            `${start.toLocaleDateString("en-GB", { ...opts, year: "numeric"})}
-            - ${end.toLocaleDateString("en-GB", { ...opts, year: "numeric"})}`
+            `${start.toLocaleDateString(
+                "en-GB", { ...opts, year: "numeric"})}
+            - ${end.toLocaleDateString(
+                "en-GB", { ...opts, year: "numeric"})}`
         );
     }
 }
@@ -37,20 +40,32 @@ const displayDuration = (duration: number): String => {
     return toReturn;
 }
 
-const ExperienceCard = (exp: Experience) => {
+const ExperienceCard = (props: {exp: Experience}) => {
+    const exp: Experience = props.exp;
     const start: Date = new Date(exp.start);
     const end:   Date = new Date(exp.end);
     const duration = end.valueOf() - start.valueOf();
     return (
         <div className="card" key={exp.key}>
             <div className="e-title">
-                <h3>{exp.title}</h3>
-                <span>
-                    {getDisplayDates(start, end)} {" "}
-                    ({displayDuration(duration)})
+                <span className="e-head">
+                    <h3>{exp.title}</h3>
+                    <span className="dates">
+                        {getDisplayDates(start, end)} {" "}
+                        ({displayDuration(duration)})
+                    </span>
+                </span>
+                <span className="affiliation">
+                        <i>{exp.affiliation}</i>
                 </span>
             </div>
-            <span><i>{exp.affiliation}</i></span>
+            <div className="tags">
+                { 
+                exp.tags.map((x, i) => 
+                    <Tag key={i.toString()} text={x}/>
+                )
+                }
+            </div>
         </div>
     )
 }

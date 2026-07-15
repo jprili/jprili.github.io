@@ -21,7 +21,7 @@ const IconLink = (key: string, href: string | null) => {
     )
 }
 
-const Tags = (project: Project) => {
+const ProjectTags = (project: Project) => {
     return (
         <div 
             className="p-links" 
@@ -33,4 +33,4 @@ const Tags = (project: Project) => {
     )
 }
 
-export { Tags };
+export { ProjectTags as Tags };

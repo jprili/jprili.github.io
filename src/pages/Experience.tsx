@@ -4,7 +4,7 @@ import { parseExperiences } from "../data/Experience";
 
 const Experience = () => {
     const cards = parseExperiences()
-        .map(ExperienceCard);
+        .map((x) => <ExperienceCard exp={x}/>);
     return (
         <div className="content">
             <h2>Professional Experience</h2>

@@ -3,7 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 const Header = () => {
     let paths: { [key: string]: string } = {
         "home": "/",
-        "projects": "/projects"
+        "projects": "/projects",
+        "experience": "/experience"
     }
     const { pathname } = useLocation();
     let toRender = (

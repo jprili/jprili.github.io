@@ -1,5 +1,5 @@
 import type { Project } from "../data/Project";
-import { Tags } from "../components/Tags";
+import { Tags } from "./ProjectTags";
 
 const ProjectCard = (project: Project) => {
     return (

@@ -90,17 +90,37 @@ nav {
   left: 5px;
   bottom: 25px;
   background-color: #fff;
-  width: max-content;
+  width: fit-content;
 }
 
 .p-links {
   margin-top: -10px;
 }
 
+.affiliation {
+  margin-top: -18px;
+}
+
 .e-title {
   display: flex;
-  flex:     row;
+  flex-direction: column;
+}
+
+.e-head {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+.e-head > * {
+  margin: 0;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  left: 5px;
+  bottom: 25px;
+  background-color: #fff;
+  width: max-content;
 }
 
 .card {
@@ -148,7 +168,18 @@ nav {
   margin: 5vh 0;
 }
 
+.tags {
+  padding: 10px 0;
+  overflow: scroll hidden;
+}
 
+.tag {
+  background-color: #88ccff;
+  padding:          0 10px;
+  border-radius:    10px;
+  margin:           0 5px;
+  white-space: nowrap;
+}
 
 @font-face {
   font-family: 'CMUSerif';

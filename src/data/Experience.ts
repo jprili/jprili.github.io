@@ -9,9 +9,11 @@ type Experience = {
 
     start:       string;
     end:         string;
+
+    tags:        string[];
 }
 
-const parseExperiences = (): Experience[] => {;
+const parseExperiences = (): Experience[] => {
     let projects: Experience[] = raw
         .map(
             (x: any) => 
