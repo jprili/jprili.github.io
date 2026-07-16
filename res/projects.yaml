@@ -2,7 +2,12 @@ projects:
   - project:
       key: iron-obd
       name: Iron OBD
-      desc: (linked to [iron-obd experience])
+      desc: 
+        An on-board diagnostics system that includes
+        long-term data persistence for vehicles supporting
+        the OBD-II protocol, and a dashboard for 
+        viewing historical data. Project in collaboration
+        Iron IoT.
       link: null
       youtube: null
       github: https://github.com/ironiot/iron-obd2
