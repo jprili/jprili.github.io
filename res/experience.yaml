@@ -1,0 +1,57 @@
+- experience:
+    key: netgear-coop
+    affiliation: NETGEAR Inc.
+    title:       RF Software Engineer Co-op
+    location:    Richmond BC
+    start:       2022-09-05
+    end:         2023-05-31
+    tags:
+        - python
+        - qt
+        - ni-visa
+        - electrical
+
+- experience:
+    key: caracal-coop
+    affiliation: Caracal Technologies Inc.
+    title:       Junior Software Developer Co-op
+    location:    Vancouver BC
+    start:       2025-04-12
+    end:         2025-12-31
+    tags:
+        - python
+        - react
+        - typescript
+        - pgsql
+        - aws:lambda
+        - aws:aurora
+        - atlassian:jira
+        - atlassian:confluence
+
+- experience:
+    key: ubc-ta
+    affiliation: University of British Columbia (UBC)
+    title:       Undergraduate Teaching Assistant
+    location:    Vancouver BC
+    start:       2024-01-01
+    end:         2024-05-01
+    tags:
+        - teaching
+        - communication
+    
+- experience:
+    key: iron-iot
+    affiliation: Iron IoT (under BC Institute of Tech.)
+    title:       Team Lead (ISSP)
+    location:    Burnaby BC
+    start:       2026-04-01
+    end:         2026-05-03
+    tags:
+        - python
+        - typescript
+        - react
+        - postgres
+        - obd-ii
+        - atlassian:trello
+        - agile
+    
