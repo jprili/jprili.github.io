@@ -9,6 +9,9 @@ import {
     Html,
 } from "@react-three/drei";
 
+// @ts-ignore
+import cv from "../../res/cv_jprili_2026.pdf";
+
 const SurfaceLink = (
     props: any
 ) => {
@@ -28,9 +31,16 @@ const SurfaceLink = (
                         opacity={0}
                     />
                 }
+                onClick = { props.onClick || null }
             >
                 <span className="i-link">
-                    <a href={props.to}>{props.display}</a>
+                    <a 
+                        href={props.to} 
+                        download={props.download || null}
+                        target="_blank"
+                    >
+                        {props.display}
+                    </a>
                 </span >
             </Html>
         </mesh>
@@ -38,7 +48,6 @@ const SurfaceLink = (
 }
 
 const Model = (props: ThreeElements["mesh"]) => {
-    // BUG: rendering problem here
     return (
         <group>
             <mesh {...props}
@@ -83,6 +92,16 @@ const Model = (props: ThreeElements["mesh"]) => {
                 }
                 to={"#/experience"}
                 display={"experience"}
+            />
+            <SurfaceLink
+                position={
+                    new THREE.Vector3(-1, 1, 1)
+                    .normalize()
+                    .multiplyScalar(1.2)
+                }
+                to={cv}
+                display={"download CV"}
+                download={"cv_jprili_2026.pdf"}
             />
         </group>
     )
