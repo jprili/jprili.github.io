@@ -11,4 +11,16 @@ export default defineConfig({
     pluginReact(),
     pluginYaml()
   ],
+  tools: {
+    rspack: {
+      module: {
+        rules: [
+          {
+            test: /\.pdf$/,
+            type: "asset/resource"
+          }
+        ]
+      }
+    }
+  }
 });
