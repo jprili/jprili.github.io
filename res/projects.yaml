@@ -44,7 +44,7 @@ projects:
       name: ML Interatomic Potentials with Keras
       desc: Training and prediction of crystalline structure
         potentials to compare with DFT calculations.
-      link: https://arxiv.org/abs/2404.18393
+      link: https://github.com/jprili/jprili.github.io/blob/main/res/p310_mlip.pdf?raw=true
       youtube: null
       github: https://github.com/jprili/gnn-mlip
   - project:
@@ -53,6 +53,7 @@ projects:
       desc: Analysis of a thin semiconducting sheet (GaAs) using
         the Van der Pauw method and Hall Effect to provide
         an analogue to its Quantum Hall Effect and Quantum Dots.
-      link: https://arxiv.org/abs/2312.05744
+
+      link: https://github.com/jprili/jprili.github.io/blob/main/res/hall_effect.pdf?raw=true
       youtube: null
       github: null
